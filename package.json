@@ -1,5 +1,5 @@
 {
-  "name": "file-mime-type",
+  "name": "file-type-mime",
   "version": "0.0.1",
   "description": "",
   "main": "dist/index.js",
