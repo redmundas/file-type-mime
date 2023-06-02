@@ -4,15 +4,22 @@
   "description": "",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
-  "files": ["dist/**/*"],
+  "files": [
+    "dist/**/*"
+  ],
   "scripts": {
-    "build": "tsc"
+    "build": "rm -rf dist && tsc",
+    "test": "mocha --require ts-node/register src/*.spec.ts"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "devDependencies": {
+    "@types/chai": "^4.3.5",
+    "@types/mocha": "^10.0.1",
     "@types/node": "^20.2.5",
+    "chai": "^4.3.7",
+    "mocha": "^10.2.0",
     "ts-node": "^10.9.1",
     "typescript": "^5.0.4"
   }
