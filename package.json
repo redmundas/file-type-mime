@@ -1,7 +1,7 @@
 {
   "name": "file-type-mime",
-  "version": "0.0.1",
-  "description": "",
+  "version": "0.0.2",
+  "description": "Parse mime type of the file",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "files": [
@@ -11,8 +11,15 @@
     "build": "rm -rf dist && tsc",
     "test": "mocha --require ts-node/register src/*.spec.ts"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": ["mime", "file", "type", "content", "content-type", "parse"],
+  "author": {
+		"name": "Edmundas Ramanauskas",
+		"email": "edmundas.ramanauskas@gmail.com"
+	},
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/redmundas/file-type-mime.git"
+  },
   "license": "MIT",
   "devDependencies": {
     "@types/chai": "^4.3.5",

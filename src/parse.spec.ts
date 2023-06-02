@@ -10,6 +10,7 @@ describe('parse', function () {
     { path: './data/sample.pdf', data: { ext: 'pdf', mime: 'application/pdf' }},
     { path: './data/sample.txt', data: undefined },
   ];
+
   files.forEach(({ data, path}) => {
     it(`${path} file`, function () {
       const file = resolve(path);
