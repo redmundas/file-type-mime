@@ -5,6 +5,8 @@ import parse from './parse';
 
 describe('parse', () => {
   const files = [
+    { path: './data/sample.gif', data: { ext: 'gif', mime: 'image/gif' } },
+    { path: './data/sample.ico', data: { ext: 'ico', mime: 'image/x-icon' } },
     { path: './data/sample.jpg', data: { ext: 'jpg', mime: 'image/jpeg' } },
     { path: './data/sample.png', data: { ext: 'png', mime: 'image/png' } },
     {
