@@ -1,7 +1,7 @@
 {
   "name": "file-type-mime",
-  "version": "0.0.3",
-  "description": "Parse mime type of the file",
+  "version": "0.0.4",
+  "description": "Utility to parse mime type from a binary file",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "files": [
