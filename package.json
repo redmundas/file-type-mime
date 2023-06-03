@@ -8,7 +8,7 @@
     "dist/**/*"
   ],
   "scripts": {
-    "lint": "rome check src",
+    "check": "rome check src",
     "format": "rome format src --write",
     "build": "rm -rf dist && tsc",
     "test": "mocha --require ts-node/register src/*.spec.ts"
