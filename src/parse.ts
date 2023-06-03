@@ -1,8 +1,15 @@
+import types from './types';
+import { getString, getUint16, getUint32 } from './utils';
+
 export default function parse(buffer: ArrayBuffer) {
   // Size needs to be not less than the longest sample + offset
   const bytes = new Uint8Array(buffer.slice(0, 8));
-  for (const [ext, mime, sample, offset = 0] of headers) {
+  for (const [ext, mime, sample, { empty = false, offset = 0 } = {}] of types) {
     if (compare(bytes, sample, offset)) {
+      if (ext === 'zip' && !empty) {
+        return parseZipLikeFiles(buffer, { ext, mime });
+      }
+
       return { ext, mime };
     }
   }
@@ -10,14 +17,83 @@ export default function parse(buffer: ArrayBuffer) {
   return undefined;
 }
 
-// https://en.wikipedia.org/wiki/List_of_file_signatures
-const headers: Array<[string, string, number[]]> = [
-  ['bmp', 'image/bmp', [0x42, 0x4d]],
-  ['gif', 'image/gif', [0x47, 0x49, 0x46]],
-  ['jpg', 'image/jpeg', [0xff, 0xd8, 0xff]],
-  ['pdf', 'application/pdf', [0x25, 0x50, 0x44, 0x46, 0x2d]],
-  ['png', 'image/png', [0x89, 0x50, 0x4e, 0x47, 0x0d, 0x0a, 0x1a, 0x0a]],
-];
+// https://en.wikipedia.org/wiki/ZIP_(file_format)#File_headers
+function parseZipLikeFiles(
+  buffer: ArrayBuffer,
+  result: { ext: string; mime: string }
+) {
+  const size = getUint16(buffer, 26);
+  const name = getString(buffer, 30, size);
+  const [value] = name.split('/');
+  if (value === 'ppt' && name.endsWith('.xml')) {
+    return {
+      ext: 'pptx',
+      mime: 'application/vnd.openxmlformats-officedocument.presentationml.presentation',
+    };
+  }
+
+  if (value === 'word' && name.endsWith('.xml')) {
+    return {
+      ext: 'docx',
+      mime: 'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
+    };
+  }
+
+  if (value === 'xl' && name.endsWith('.xml')) {
+    return {
+      ext: 'xlsx',
+      mime: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
+    };
+  }
+
+  if (value === 'mimetype') {
+    return parseOpenDocumentFile(buffer, size) ?? result;
+  }
+
+  return result;
+}
+
+function parseOpenDocumentFile(buffer: ArrayBuffer, offset: number) {
+  const compressedSize = getUint32(buffer, 18);
+  const uncompressedSize = getUint32(buffer, 22);
+  const extraFieldLength = getUint16(buffer, 28);
+
+  if (compressedSize === uncompressedSize) {
+    const mime = getString(
+      buffer,
+      30 + offset + extraFieldLength,
+      compressedSize
+    );
+
+    if (mime === 'application/vnd.oasis.opendocument.presentation') {
+      return {
+        ext: 'odp',
+        mime,
+      };
+    }
+
+    if (mime === 'application/vnd.oasis.opendocument.spreadsheet') {
+      return {
+        ext: 'ods',
+        mime,
+      };
+    }
+
+    if (mime === 'application/vnd.oasis.opendocument.text') {
+      return {
+        ext: 'odt',
+        mime,
+      };
+    }
+
+    if (mime === 'application/epub+zip') {
+      return {
+        ext: 'epub',
+        mime,
+      };
+    }
+  }
+}
 
 function compare(source: Uint8Array, sample: number[], offset: number) {
   if (source.length < sample.length + offset) {

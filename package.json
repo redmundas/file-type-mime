@@ -1,6 +1,6 @@
 {
   "name": "file-type-mime",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Parse mime type of the file",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
