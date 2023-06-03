@@ -1,14 +1,18 @@
-export function getUint16(buffer: ArrayBuffer, offset: number) {
+export function getUint16(buffer: ArrayBuffer, offset = 0) {
   const view = getBufferView(buffer, offset, 2);
   return view.getUint16(0, true);
 }
 
-export function getUint32(buffer: ArrayBuffer, offset: number) {
+export function getUint32(buffer: ArrayBuffer, offset = 0) {
   const view = getBufferView(buffer, offset, 4);
   return view.getUint32(0, true);
 }
 
-export function getString(buffer: ArrayBuffer, offset: number, length: number) {
+export function getString(
+  buffer: ArrayBuffer,
+  offset = 0,
+  length = buffer.byteLength
+) {
   const slice = buffer.slice(offset, offset + length);
   return decoder.decode(new Uint8Array(slice));
 }

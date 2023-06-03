@@ -2,6 +2,7 @@
 	"space": true,
   "prettier": true,
   "rules": {
-    "import/extensions": "off"
+    "import/extensions": "off",
+    "unicorn/prevent-abbreviations": "off"
   }
 }
