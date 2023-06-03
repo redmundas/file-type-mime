@@ -20,7 +20,7 @@ export default function parse(buffer: ArrayBuffer) {
 // https://en.wikipedia.org/wiki/ZIP_(file_format)#File_headers
 function parseZipLikeFiles(
   buffer: ArrayBuffer,
-  result: { ext: string; mime: string }
+  result: { ext: string; mime: string },
 ) {
   const size = getUint16(buffer, 26);
   const name = getString(buffer, 30, size);
@@ -62,7 +62,7 @@ function parseOpenDocumentFile(buffer: ArrayBuffer, offset: number) {
     const mime = getString(
       buffer,
       30 + offset + extraFieldLength,
-      compressedSize
+      compressedSize,
     );
 
     if (mime === 'application/vnd.oasis.opendocument.presentation') {

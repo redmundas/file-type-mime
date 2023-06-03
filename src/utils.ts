@@ -11,7 +11,7 @@ export function getUint32(buffer: ArrayBuffer, offset = 0) {
 export function getString(
   buffer: ArrayBuffer,
   offset = 0,
-  length = buffer.byteLength
+  length = buffer.byteLength,
 ) {
   const slice = buffer.slice(offset, offset + length);
   return decoder.decode(new Uint8Array(slice));
