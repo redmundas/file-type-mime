@@ -9,14 +9,24 @@ describe('parse', () => {
     { path: './data/sample.ico', data: { ext: 'ico', mime: 'image/x-icon' } },
     { path: './data/sample.jpg', data: { ext: 'jpg', mime: 'image/jpeg' } },
     { path: './data/sample.png', data: { ext: 'png', mime: 'image/png' } },
+    { path: './data/sample.tiff', data: { ext: 'tiff', mime: 'image/tiff' } },
+    { path: './data/sample.heic', data: { ext: 'heic', mime: 'image/heic' } },
     {
       path: './data/sample.pdf',
       data: { ext: 'pdf', mime: 'application/pdf' },
+    },
+    {
+      path: './data/sample.rtf',
+      data: { ext: 'rtf', mime: 'application/rtf' },
     },
     { path: './data/sample.txt', data: undefined },
     {
       path: './data/sample.zip',
       data: { ext: 'zip', mime: 'application/zip' },
+    },
+    {
+      path: './data/sample.jar',
+      data: { ext: 'jar', mime: 'application/java-archive' },
     },
     {
       path: './data/sample.docx',
@@ -65,6 +75,27 @@ describe('parse', () => {
       data: {
         ext: 'epub',
         mime: 'application/epub+zip',
+      },
+    },
+    {
+      path: './data/sample.bz2',
+      data: {
+        ext: 'bz2',
+        mime: 'application/x-bzip2',
+      },
+    },
+    {
+      path: './data/sample.gz',
+      data: {
+        ext: 'gz',
+        mime: 'application/gzip',
+      },
+    },
+    {
+      path: './data/sample.tar',
+      data: {
+        ext: 'tar',
+        mime: 'application/x-tar',
       },
     },
   ];

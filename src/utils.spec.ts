@@ -1,5 +1,5 @@
 import { expect } from 'chai';
-import { getString, getUint16, getUint32 } from './utils';
+import { bytesToHex, getString, getUint16, getUint32 } from './utils';
 
 describe('utils', () => {
   const intValue = 128;
@@ -19,5 +19,10 @@ describe('utils', () => {
     const encoder = new TextEncoder();
     const buffer = encoder.encode(strValue).buffer;
     expect(getString(buffer)).to.eq(strValue);
+  });
+
+  it('toHex', () => {
+    const array = new Uint8Array([128, 128]);
+    expect(bytesToHex(array)).to.eq('80 80');
   });
 });

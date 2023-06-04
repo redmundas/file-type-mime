@@ -45,18 +45,25 @@ console.log('MIME_TYPE', result);
 
 | File extension | Content (mime) type |
 | -------------- | ------------------- |
-| bpm  | image/bmp |
+| bmp  | image/bmp |
 | gif  | image/gif |
 | ico  | image/x-icon |
 | jpg  | image/jpeg |
-| pdf  | application/pdf |
+| heic | image/heic |
 | png  | image/png |
-| rar  | application/x-rar-compressed |
+| tiff | image/tiff |
+| pdf  | application/pdf |
+| rtf  | application/rtf |
+| epub | application/epub+zip |
+| gz   | application/gzip |
+| jar  | application/java-archive |
 | zip  | application/zip |
+| bz2  | application/x-bzip2 |
+| rar  | application/x-rar-compressed |
+| tar  | application/x-tar |
 | docx | application/vnd.openxmlformats-officedocument.wordprocessingml.document |
 | pptx | application/vnd.openxmlformats-officedocument.presentationml.presentation |
 | xlsx | application/vnd.openxmlformats-officedocument.spreadsheetml.sheet |
 | opd  | application/vnd.oasis.opendocument.presentation |
 | ods  | application/vnd.oasis.opendocument.spreadsheet |
 | odt  | application/vnd.oasis.opendocument.text |
-| epub | application/epub+zip |

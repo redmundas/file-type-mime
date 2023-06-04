@@ -17,6 +17,11 @@ export function getString(
   return decoder.decode(new Uint8Array(slice));
 }
 
+export function bytesToHex(array: Uint8Array, separator = ' ') {
+  const parts = [...array].map((x) => x.toString(16).padStart(2, '0'));
+  return parts.join(separator);
+}
+
 function getBufferView(buffer: ArrayBuffer, offset: number, length: number) {
   const slice = buffer.slice(offset, offset + length);
   return new DataView(new Uint8Array(slice).buffer);

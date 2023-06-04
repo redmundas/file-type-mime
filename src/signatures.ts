@@ -1,14 +1,22 @@
 // https://en.wikipedia.org/wiki/List_of_file_signatures
+// https://en.wikipedia.org/wiki/List_of_archive_formats
 
-type Options = { empty?: boolean; offset?: number };
-type Signature =
+export type Options = { empty?: boolean; offset?: number };
+export type Signature =
   | [string, string, number[]]
   | [string, string, number[], Options];
 
-const types: Signature[] = [
+export const signatures: Signature[] = [
   ['bmp', 'image/bmp', [0x42, 0x4d]],
   ['gif', 'image/gif', [0x47, 0x49, 0x46, 0x38, 0x37, 0x61]],
   ['gif', 'image/gif', [0x47, 0x49, 0x46, 0x38, 0x39, 0x61]],
+  [
+    'heic',
+    'image/heic',
+    [0x66, 0x74, 0x79, 0x70, 0x68, 0x65, 0x69],
+    { offset: 4 },
+  ],
+  ['heic', 'image/heic', [0x66, 0x74, 0x79, 0x70, 0x6d], { offset: 4 }],
   ['ico', 'image/x-icon', [0x00, 0x00, 0x01, 0x00]],
   ['jpg', 'image/jpeg', [0xff, 0xd8, 0xff]],
   ['pdf', 'application/pdf', [0x25, 0x50, 0x44, 0x46, 0x2d]],
@@ -23,8 +31,23 @@ const types: Signature[] = [
     'application/x-rar-compressed',
     [0x52, 0x61, 0x72, 0x21, 0x1a, 0x07, 0x01, 0x00],
   ],
+  ['rtf', 'application/rtf', [0x7b, 0x5c, 0x72, 0x74, 0x66, 0x31]],
+  ['bz2', 'application/x-bzip2', [0x42, 0x5a, 0x68]],
+  ['gz', 'application/gzip', [0x1f, 0x8b]],
+  [
+    'tar',
+    'application/x-tar',
+    [0x75, 0x73, 0x74, 0x61, 0x72, 0x00, 0x30, 0x30],
+    { offset: 257 },
+  ],
+  [
+    'tar',
+    'application/x-tar',
+    [0x75, 0x73, 0x74, 0x61, 0x72, 0x20, 0x20, 0x00],
+    { offset: 257 },
+  ],
+  ['tif', 'image/tiff', [0x49, 0x49, 0x2a, 0x00]],
+  ['tiff', 'image/tiff', [0x4d, 0x4d, 0x00, 0x2a]],
   ['zip', 'application/zip', [0x50, 0x4b, 0x03, 0x04]],
   ['zip', 'application/zip', [0x50, 0x4b, 0x05, 0x06], { empty: true }],
 ];
-
-export default types;

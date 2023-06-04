@@ -1,10 +1,15 @@
-import types from './types';
+import { signatures } from './signatures';
 import { getString, getUint16, getUint32 } from './utils';
 
 export default function parse(buffer: ArrayBuffer) {
   // Size needs to be not less than the longest sample + offset
-  const bytes = new Uint8Array(buffer.slice(0, 8));
-  for (const [ext, mime, sample, { empty = false, offset = 0 } = {}] of types) {
+  const bytes = new Uint8Array(buffer.slice(0, 265));
+  for (const [
+    ext,
+    mime,
+    sample,
+    { empty = false, offset = 0 } = {},
+  ] of signatures) {
     if (compare(bytes, sample, offset)) {
       if (ext === 'zip' && !empty) {
         return parseZipLikeFiles(buffer, { ext, mime });
@@ -24,29 +29,38 @@ function parseZipLikeFiles(
 ) {
   const size = getUint16(buffer, 26);
   const name = getString(buffer, 30, size);
-  const [value] = name.split('/');
-  if (value === 'ppt' && name.endsWith('.xml')) {
+  const [identifier] = name.split('/');
+  const xmlFormat = name.endsWith('.xml');
+
+  if (identifier === 'META-INF') {
+    return {
+      ext: 'jar',
+      mime: 'application/java-archive',
+    };
+  }
+
+  if (identifier === 'ppt' && xmlFormat) {
     return {
       ext: 'pptx',
       mime: 'application/vnd.openxmlformats-officedocument.presentationml.presentation',
     };
   }
 
-  if (value === 'word' && name.endsWith('.xml')) {
+  if (identifier === 'word' && xmlFormat) {
     return {
       ext: 'docx',
       mime: 'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
     };
   }
 
-  if (value === 'xl' && name.endsWith('.xml')) {
+  if (identifier === 'xl' && xmlFormat) {
     return {
       ext: 'xlsx',
       mime: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
     };
   }
 
-  if (value === 'mimetype') {
+  if (identifier === 'mimetype') {
     return parseOpenDocumentFile(buffer, size) ?? result;
   }
 
