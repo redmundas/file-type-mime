@@ -1,9 +1,13 @@
 import { signatures } from './signatures';
 import { getString, getUint16, getUint32 } from './utils';
 
+// Upper limit needs to be not less than the longest sample + offset
+const UPPER_LIMIT = signatures
+  .map(([_ext, _mime, sample, { offset = 0 } = {}]) => sample.length + offset)
+  .reduce((lim, val) => (val > lim ? val : lim), 0);
+
 export default function parse(buffer: ArrayBuffer) {
-  // Size needs to be not less than the longest sample + offset
-  const bytes = new Uint8Array(buffer.slice(0, 265));
+  const bytes = new Uint8Array(buffer.slice(0, UPPER_LIMIT));
   for (const [
     ext,
     mime,

@@ -22,7 +22,7 @@ describe('utils', () => {
   });
 
   it('toHex', () => {
-    const array = new Uint8Array([128, 128]);
+    const array = new Uint8Array([intValue, intValue]);
     expect(bytesToHex(array)).to.eq('80 80');
   });
 });
