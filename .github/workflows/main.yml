@@ -1,0 +1,66 @@
+name: build
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  build:
+    name: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v2
+        id: pnpm-install
+        with:
+          version: 8
+          run_install: false
+
+      - name: Get pnpm store directory
+        id: pnpm-cache
+        shell: bash
+        run: |
+          echo "STORE_PATH=$(pnpm store path)" >> $GITHUB_OUTPUT
+
+      - name: Setup pnpm cache
+        uses: actions/cache@v3
+        with:
+          path: ${{ steps.pnpm-cache.outputs.STORE_PATH }}
+          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-pnpm-store-
+
+      - name: Install dependencies
+        run: pnpm install --prefer-offline --frozen-lockfile
+
+      - name: Validate code
+        run: pnpm check
+
+      - name: Format code
+        run: pnpm format
+
+      - name: Ensure clean repo
+        run: |
+          if [[ ! -z "$(git status --porcelain)" ]]; then
+            echo Working directory is dirty.
+            git status --porcelain
+            git --no-pager diff --no-color
+            exit 1
+          fi
+
+      - name: Build code
+        run: pnpm build
+
+      - name: Upload assets
+        uses: actions/upload-artifact@v3
+        with:
+          name: assets
+          path: dist
