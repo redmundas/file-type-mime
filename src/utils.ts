@@ -22,6 +22,24 @@ export function bytesToHex(array: Uint8Array, separator = ' ') {
   return parts.join(separator);
 }
 
+export function compareBytes(
+  source: Uint8Array | number[],
+  sample: Uint8Array | number[],
+  offset = 0,
+) {
+  if (source.length < sample.length + offset) {
+    return false;
+  }
+
+  for (const [i, element] of sample.entries()) {
+    if (element !== source[i + offset]) {
+      return false;
+    }
+  }
+
+  return true;
+}
+
 function getBufferView(buffer: ArrayBuffer, offset: number, length: number) {
   const slice = buffer.slice(offset, offset + length);
   return new DataView(new Uint8Array(slice).buffer);

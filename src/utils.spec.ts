@@ -1,9 +1,21 @@
 import { expect } from 'chai';
-import { bytesToHex, getString, getUint16, getUint32 } from './utils';
+import {
+  bytesToHex,
+  compareBytes,
+  getString,
+  getUint16,
+  getUint32,
+} from './utils';
 
 describe('utils', () => {
   const intValue = 128;
   const strValue = '.';
+
+  it('compareBytes', () => {
+    const array = new Uint8Array([intValue, intValue]);
+    expect(compareBytes(array, [intValue, intValue])).to.be.true;
+    expect(compareBytes(array, [intValue], 1)).to.be.true;
+  });
 
   it('getUint16', () => {
     const buffer = new Uint16Array([intValue]).buffer;

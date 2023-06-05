@@ -1,5 +1,5 @@
 import { signatures } from './signatures';
-import { getString, getUint16, getUint32 } from './utils';
+import { compareBytes, getString, getUint16, getUint32 } from './utils';
 
 // Upper limit needs to be not less than the longest sample + offset
 const UPPER_LIMIT = signatures
@@ -14,7 +14,7 @@ export default function parse(buffer: ArrayBuffer) {
     sample,
     { empty = false, offset = 0 } = {},
   ] of signatures) {
-    if (compare(bytes, sample, offset)) {
+    if (compareBytes(bytes, sample, offset)) {
       if (ext === 'zip' && !empty) {
         return parseZipLikeFiles(buffer, { ext, mime });
       }
@@ -111,18 +111,4 @@ function parseOpenDocumentFile(buffer: ArrayBuffer, offset: number) {
       };
     }
   }
-}
-
-function compare(source: Uint8Array, sample: number[], offset: number) {
-  if (source.length < sample.length + offset) {
-    return false;
-  }
-
-  for (const [i, element] of sample.entries()) {
-    if (element !== source[i + offset]) {
-      return false;
-    }
-  }
-
-  return true;
 }
