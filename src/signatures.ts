@@ -1,10 +1,11 @@
 // https://en.wikipedia.org/wiki/List_of_file_signatures
 // https://en.wikipedia.org/wiki/List_of_archive_formats
 
-export type Options = { empty?: boolean; offset?: number };
+export type Options = { exact?: boolean; offset?: number };
 export type Signature =
-  | [string, string, number[]]
-  | [string, string, number[], Options];
+  | [string, string, (number | null)[]]
+  | [string, string, (number | null)[], Options]
+  | [string, string, (number | null)[], Options, Signature[]];
 
 export const signatures: Signature[] = [
   ['bmp', 'image/bmp', [0x42, 0x4d]],
@@ -21,6 +22,7 @@ export const signatures: Signature[] = [
   ['jpg', 'image/jpeg', [0xff, 0xd8, 0xff]],
   ['pdf', 'application/pdf', [0x25, 0x50, 0x44, 0x46, 0x2d]],
   ['png', 'image/png', [0x89, 0x50, 0x4e, 0x47, 0x0d, 0x0a, 0x1a, 0x0a]],
+  ['7z', 'application/x-7z-compressed', [0x37, 0x7a, 0xbc, 0xaf, 0x27, 0x1c]],
   [
     'rar',
     'application/x-rar-compressed',
@@ -48,6 +50,53 @@ export const signatures: Signature[] = [
   ],
   ['tif', 'image/tiff', [0x49, 0x49, 0x2a, 0x00]],
   ['tiff', 'image/tiff', [0x4d, 0x4d, 0x00, 0x2a]],
-  ['zip', 'application/zip', [0x50, 0x4b, 0x03, 0x04]],
-  ['zip', 'application/zip', [0x50, 0x4b, 0x05, 0x06], { empty: true }],
+  ['zip', 'application/zip', [0x50, 0x4b, 0x03, 0x04], { exact: false }],
+  ['zip', 'application/zip', [0x50, 0x4b, 0x05, 0x06]],
+  ['mp3', 'audio/mp3', [0xff, 0xfb]],
+  ['mp3', 'audio/mp3', [0xff, 0xf3]],
+  ['mp3', 'audio/mp3', [0xff, 0xf2]],
+  ['mp3', 'audio/mp3', [0x49, 0x44, 0x33]],
+  [
+    'mp4',
+    'video/mp4',
+    [0x66, 0x74, 0x79, 0x70, 0x69, 0x73, 0x6f, 0x6d],
+    { offset: 4 },
+  ],
+  [
+    'avi',
+    'video/x-msvideo',
+    [0x52, 0x49, 0x46, 0x46, null, null, null, null, 0x41, 0x56, 0x49, 0x20],
+  ],
+  [
+    'wav',
+    'audio/wav',
+    [0x52, 0x49, 0x46, 0x46, null, null, null, null, 0x57, 0x41, 0x56, 0x45],
+  ],
+  [
+    'ogx',
+    'application/ogg',
+    [0x4f, 0x67, 0x67, 0x53],
+    { exact: false },
+    [
+      ['oga', 'audio/ogg', [0x7f, 0x46, 0x4c, 0x41, 0x43], { offset: 28 }],
+      [
+        'ogg',
+        'audio/ogg',
+        [0x01, 0x76, 0x6f, 0x72, 0x62, 0x69, 0x73],
+        { offset: 28 },
+      ],
+      [
+        'ogm',
+        'video/ogg',
+        [0x01, 0x76, 0x69, 0x64, 0x65, 0x6f, 0x00],
+        { offset: 28 },
+      ],
+      [
+        'ogv',
+        'video/ogg',
+        [0x80, 0x74, 0x68, 0x65, 0x6f, 0x72, 0x61],
+        { offset: 28 },
+      ],
+    ],
+  ],
 ];

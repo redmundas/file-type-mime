@@ -24,7 +24,7 @@ export function bytesToHex(array: Uint8Array, separator = ' ') {
 
 export function compareBytes(
   source: Uint8Array | number[],
-  sample: Uint8Array | number[],
+  sample: Uint8Array | (number | null)[],
   offset = 0,
 ) {
   if (source.length < sample.length + offset) {
@@ -32,6 +32,7 @@ export function compareBytes(
   }
 
   for (const [i, element] of sample.entries()) {
+    if (element === null) continue;
     if (element !== source[i + offset]) {
       return false;
     }

@@ -5,10 +5,18 @@ import parse from './parse';
 
 describe('parse', () => {
   const files = [
+    {
+      path: './data/sample.avi',
+      data: { ext: 'avi', mime: 'video/x-msvideo' },
+    },
+    { path: './data/sample.mp3', data: { ext: 'mp3', mime: 'audio/mp3' } },
+    { path: './data/sample.ogg', data: { ext: 'ogg', mime: 'audio/ogg' } },
+    { path: './data/sample.mp4', data: { ext: 'mp4', mime: 'video/mp4' } },
     { path: './data/sample.gif', data: { ext: 'gif', mime: 'image/gif' } },
     { path: './data/sample.ico', data: { ext: 'ico', mime: 'image/x-icon' } },
     { path: './data/sample.jpg', data: { ext: 'jpg', mime: 'image/jpeg' } },
     { path: './data/sample.png', data: { ext: 'png', mime: 'image/png' } },
+    { path: './data/sample.wav', data: { ext: 'wav', mime: 'audio/wav' } },
     { path: './data/sample.tiff', data: { ext: 'tiff', mime: 'image/tiff' } },
     { path: './data/sample.heic', data: { ext: 'heic', mime: 'image/heic' } },
     {
@@ -96,6 +104,13 @@ describe('parse', () => {
       data: {
         ext: 'tar',
         mime: 'application/x-tar',
+      },
+    },
+    {
+      path: './data/sample.7z',
+      data: {
+        ext: '7z',
+        mime: 'application/x-7z-compressed',
       },
     },
   ];

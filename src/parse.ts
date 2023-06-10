@@ -11,11 +11,20 @@ export default function parse(buffer: ArrayBuffer) {
     ext,
     mime,
     sample,
-    { empty = false, offset = 0 } = {},
+    { exact = true, offset = 0 } = {},
+    subSignatures = [],
   ] of signatures) {
     if (compareBytes(bytes, sample, offset)) {
-      if (ext === 'zip' && !empty) {
+      if (ext === 'zip' && !exact) {
         return parseZipLikeFiles(buffer, { ext, mime });
+      }
+
+      if (!exact && subSignatures.length) {
+        for (const [ext, mime, sample, { offset = 0 } = {}] of subSignatures) {
+          if (compareBytes(bytes, sample, offset)) {
+            return { ext, mime };
+          }
+        }
       }
 
       return { ext, mime };
