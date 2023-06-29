@@ -47,6 +47,9 @@ jobs:
       - name: Format code
         run: pnpm format
 
+      - name: Test code
+        run: pnpm test
+
       - name: Ensure clean repo
         run: |
           if [[ ! -z "$(git status --porcelain)" ]]; then
