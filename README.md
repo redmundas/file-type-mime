@@ -1,4 +1,6 @@
 # file-type-mime
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fredmundas%2Ffile-type-mime.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Fredmundas%2Ffile-type-mime?ref=badge_shield)
+
 Utility to parse mime type from a binary file
 
 ## Examples
@@ -77,3 +79,7 @@ console.log('MIME_TYPE', result);
 | ogv  | video/ogg |
 | ogx  | application/ogg |
 | wav  | audio/wav |
+
+
+## License
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fredmundas%2Ffile-type-mime.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2Fredmundas%2Ffile-type-mime?ref=badge_large)
