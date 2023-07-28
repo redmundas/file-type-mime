@@ -1,4 +1,5 @@
 export type Options = {
+  extra?: boolean;
   hint?: { ext?: string; mime?: string };
 };
 export type Result = {

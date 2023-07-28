@@ -1,7 +1,7 @@
 # file-type-mime
 [![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fredmundas%2Ffile-type-mime.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Fredmundas%2Ffile-type-mime?ref=badge_shield)
 
-Utility to parse mime type from a binary file
+Utility to parse mime type from a file content.
 
 ## Usage
 
@@ -60,6 +60,7 @@ A buffer representing file data
 Type: `{ hint?: { ext?: string; mime?: string } }`
 
 - hint - used to short-circuit general flow by filtering signatures list
+- extra - used to parse additional file type formats (like json)
 
 ### Return
 
@@ -103,6 +104,7 @@ Type: `{ ext: string; mime: string } | undefined`
 | ogv            | video/ogg                                                                 |
 | ogx            | application/ogg                                                           |
 | wav            | audio/wav                                                                 |
+| json           | application/json                                                          |
 
 ## License
 [![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fredmundas%2Ffile-type-mime.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2Fredmundas%2Ffile-type-mime?ref=badge_large)

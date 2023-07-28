@@ -28,6 +28,7 @@ describe('parse', () => {
       data: { ext: 'rtf', mime: 'application/rtf' },
     },
     { path: './data/sample.txt', data: undefined },
+    { path: './data/sample.json', data: undefined },
     {
       path: './data/sample.zip',
       data: { ext: 'zip', mime: 'application/zip' },
@@ -125,10 +126,11 @@ describe('parse', () => {
     });
   }
 
-  it('parse with options', () => {
+  it('parse with hint option', () => {
     const result = { ext: 'pdf', mime: 'application/pdf' };
     const file = resolve('./data/sample.pdf');
     const buffer = readFileSync(file);
+
     expect(parse(buffer, {})).to.eql(result);
     expect(parse(buffer, { hint: {} })).to.eql(result);
     expect(parse(buffer, { hint: { ext: 'pdf' } })).to.eql(result);
@@ -141,5 +143,14 @@ describe('parse', () => {
     expect(
       parse(buffer, { hint: { ext: 'pdf', mime: 'application/rtf' } }),
     ).to.eql(result);
+  });
+
+  it('parse with extra option', () => {
+    const result = { ext: 'json', mime: 'application/json' };
+    const file = resolve('./data/sample.json');
+    const buffer = readFileSync(file);
+
+    expect(parse(buffer)).to.eql(undefined);
+    expect(parse(buffer, { extra: true })).to.eql(result);
   });
 });
