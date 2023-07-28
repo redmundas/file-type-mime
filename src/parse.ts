@@ -1,14 +1,7 @@
 import { compareBytes, getString, getUint16, getUint32 } from './bytes';
 import { Signature, signatures as samples } from './signatures';
+import type { Options, Result } from './types';
 import { findMatches, getUpperLimit } from './utils';
-
-export type Options = {
-  hint?: { ext?: string; mime?: string };
-};
-export type Result = {
-  ext: string;
-  mime: string;
-};
 
 // Upper limit needs to be not less than the longest sample + offset
 const UPPER_LIMIT = getUpperLimit(samples);
@@ -18,8 +11,9 @@ export default function parse(
   { hint }: Options = {},
 ): Result | undefined {
   const bytes = new Uint8Array(buffer.slice(0, UPPER_LIMIT));
+
   // use the hint to short-circuit the parsing
-  // in case it's incorect - continue general flow
+  // in case it's incorect - continue main flow
   if (hint) {
     const matches = findMatches(samples, hint);
     if (matches.length > 0) {
@@ -29,6 +23,7 @@ export default function parse(
       }
     }
   }
+
   return parseBytes(bytes, samples);
 }
 
