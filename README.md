@@ -57,7 +57,7 @@ A buffer representing file data
 
 #### options (optional)
 
-Type: `{ hint?: { ext?: string; mime?: string } }`
+Type: `{ extra?: boolean; hint?: { ext?: string; mime?: string } }`
 
 - hint - used to short-circuit general flow by filtering signatures list
 - extra - used to parse additional file type formats (like json)
