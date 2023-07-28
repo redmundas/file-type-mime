@@ -117,11 +117,29 @@ describe('parse', () => {
 
   for (const { data, path } of files) {
     const file = path.split('/').at(-1)!;
-    it(file, () => {
+    it(`parse file ${file}`, () => {
       const file = resolve(path);
       const buffer = readFileSync(file);
       const result = parse(buffer);
       expect(result).to.eql(data);
     });
   }
+
+  it('parse with options', () => {
+    const result = { ext: 'pdf', mime: 'application/pdf' };
+    const file = resolve('./data/sample.pdf');
+    const buffer = readFileSync(file);
+    expect(parse(buffer, {})).to.eql(result);
+    expect(parse(buffer, { hint: {} })).to.eql(result);
+    expect(parse(buffer, { hint: { ext: 'pdf' } })).to.eql(result);
+    expect(parse(buffer, { hint: { ext: 'rtf' } })).to.eql(result);
+    expect(parse(buffer, { hint: { mime: 'application/pdf' } })).to.eql(result);
+    expect(parse(buffer, { hint: { mime: 'application/rtf' } })).to.eql(result);
+    expect(
+      parse(buffer, { hint: { ext: 'pdf', mime: 'application/pdf' } }),
+    ).to.eql(result);
+    expect(
+      parse(buffer, { hint: { ext: 'pdf', mime: 'application/rtf' } }),
+    ).to.eql(result);
+  });
 });
