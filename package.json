@@ -1,6 +1,6 @@
 {
   "name": "file-type-mime",
-  "version": "0.0.9",
+  "version": "0.0.10",
   "description": "Utility to parse mime type from a binary file",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -11,7 +11,8 @@
     "check": "rome check src",
     "format": "rome format src --write",
     "build": "rm -rf dist && tsc",
-    "test": "mocha --require ts-node/register src/*.spec.ts"
+    "test": "mocha --require ts-node/register src/*.spec.ts",
+    "release": "pnpm build && pnpm publish"
   },
   "keywords": [
     "mime",
