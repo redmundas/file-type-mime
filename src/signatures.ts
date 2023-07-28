@@ -2,10 +2,12 @@
 // https://en.wikipedia.org/wiki/List_of_archive_formats
 
 export type Options = { exact?: boolean; offset?: number };
-export type Signature =
+export type BaseSignature =
   | [string, string, (number | null)[]]
-  | [string, string, (number | null)[], Options]
-  | [string, string, (number | null)[], Options, Signature[]];
+  | [string, string, (number | null)[], Options];
+export type Signature =
+  | BaseSignature
+  | [string, string, (number | null)[], Options, BaseSignature[]];
 
 export const signatures: Signature[] = [
   ['bmp', 'image/bmp', [0x42, 0x4d]],

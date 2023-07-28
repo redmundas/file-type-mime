@@ -1,12 +1,41 @@
 import { compareBytes, getString, getUint16, getUint32 } from './bytes';
-import { signatures } from './signatures';
-import { getUpperLimit } from './utils';
+import { Signature, signatures as samples } from './signatures';
+import { findMatches, getUpperLimit } from './utils';
+
+export type Options = {
+  hint?: { ext?: string; mime?: string };
+};
+export type Result = {
+  ext: string;
+  mime: string;
+};
 
 // Upper limit needs to be not less than the longest sample + offset
-const UPPER_LIMIT = getUpperLimit(signatures);
+const UPPER_LIMIT = getUpperLimit(samples);
 
-export default function parse(buffer: ArrayBuffer) {
+export default function parse(
+  buffer: ArrayBuffer,
+  { hint }: Options = {},
+): Result | undefined {
   const bytes = new Uint8Array(buffer.slice(0, UPPER_LIMIT));
+  // use the hint to short-circuit the parsing
+  // in case it's incorect - continue general flow
+  if (hint) {
+    const matches = findMatches(samples, hint);
+    if (matches.length > 0) {
+      const result = parseBytes(bytes, matches);
+      if (result !== undefined) {
+        return result;
+      }
+    }
+  }
+  return parseBytes(bytes, samples);
+}
+
+function parseBytes(
+  bytes: Uint8Array,
+  signatures: Signature[],
+): Result | undefined {
   for (const [
     ext,
     mime,
@@ -16,7 +45,7 @@ export default function parse(buffer: ArrayBuffer) {
   ] of signatures) {
     if (compareBytes(bytes, sample, offset)) {
       if (ext === 'zip' && !exact) {
-        return parseZipLikeFiles(buffer, { ext, mime });
+        return parseZipLikeFiles(bytes.buffer, { ext, mime });
       }
 
       if (!exact && subSignatures.length) {
@@ -38,7 +67,7 @@ export default function parse(buffer: ArrayBuffer) {
 function parseZipLikeFiles(
   buffer: ArrayBuffer,
   result: { ext: string; mime: string },
-) {
+): Result | undefined {
   const size = getUint16(buffer, 26);
   const name = getString(buffer, 30, size);
   const [identifier] = name.split('/');
@@ -79,7 +108,10 @@ function parseZipLikeFiles(
   return result;
 }
 
-function parseOpenDocumentFile(buffer: ArrayBuffer, offset: number) {
+function parseOpenDocumentFile(
+  buffer: ArrayBuffer,
+  offset: number,
+): Result | undefined {
   const compressedSize = getUint32(buffer, 18);
   const uncompressedSize = getUint32(buffer, 22);
   const extraFieldLength = getUint16(buffer, 28);
@@ -119,4 +151,6 @@ function parseOpenDocumentFile(buffer: ArrayBuffer, offset: number) {
       };
     }
   }
+
+  return undefined;
 }
