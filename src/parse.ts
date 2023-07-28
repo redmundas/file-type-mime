@@ -8,7 +8,7 @@ const UPPER_LIMIT = getUpperLimit(samples);
 
 export default function parse(
   buffer: ArrayBuffer,
-  { hint }: Options = {},
+  { extra = false, hint }: Options = {},
 ): Result | undefined {
   const bytes = new Uint8Array(buffer.slice(0, UPPER_LIMIT));
 
@@ -24,7 +24,17 @@ export default function parse(
     }
   }
 
-  return parseBytes(bytes, samples);
+  const result = parseBytes(bytes, samples);
+
+  if (result) {
+    return result;
+  }
+
+  if (extra) {
+    return parseExtraTypes(buffer);
+  }
+
+  return undefined;
 }
 
 function parseBytes(
@@ -148,4 +158,14 @@ function parseOpenDocumentFile(
   }
 
   return undefined;
+}
+
+function parseExtraTypes(buffer: ArrayBuffer): Result | undefined {
+  try {
+    const data = getString(buffer);
+    JSON.parse(data);
+    return { ext: 'json', mime: 'application/json' };
+  } catch {
+    return undefined;
+  }
 }
