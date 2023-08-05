@@ -8,7 +8,7 @@ Utility to parse mime type from a file content.
 **Browser (react)**
 
 ```javascript
-import parse from 'file-type-mime';
+import { parse } from 'file-type-mime';
 
 export default function fileUpload() {
   async function onChange(e) {
@@ -30,7 +30,7 @@ export default function fileUpload() {
 **Node.js**
 
 ```javascript
-import parse from 'file-type-mime';
+import { parse } from 'file-type-mime';
 import { readFileSync } from 'node:fs';
 import { resolve } from 'node:path';
 
