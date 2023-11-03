@@ -1,6 +1,6 @@
 import { readFileSync } from 'node:fs';
 import { resolve } from 'node:path';
-import { expect } from 'chai';
+import { describe, expect, test } from 'vitest';
 import parse from './parse';
 
 describe('parse', () => {
@@ -118,7 +118,7 @@ describe('parse', () => {
 
   for (const { data, path } of files) {
     const file = path.split('/').at(-1)!;
-    it(`parse file ${file}`, () => {
+    test(`parse file ${file}`, () => {
       const file = resolve(path);
       const buffer = readFileSync(file);
       const result = parse(buffer);
@@ -126,7 +126,7 @@ describe('parse', () => {
     });
   }
 
-  it('parse with hint option', () => {
+  test('parse with hint option', () => {
     const result = { ext: 'pdf', mime: 'application/pdf' };
     const file = resolve('./data/sample.pdf');
     const buffer = readFileSync(file);
@@ -145,7 +145,7 @@ describe('parse', () => {
     ).to.eql(result);
   });
 
-  it('parse with extra option', () => {
+  test('parse with extra option', () => {
     const result = { ext: 'json', mime: 'application/json' };
     const file = resolve('./data/sample.json');
     const buffer = readFileSync(file);
