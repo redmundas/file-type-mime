@@ -114,6 +114,20 @@ describe('parse', () => {
         mime: 'application/x-7z-compressed',
       },
     },
+    {
+      path: './data/sample.db',
+      data: {
+        ext: 'db',
+        mime: 'application/vnd.sqlite3',
+      },
+    },
+    {
+      path: './data/sample.woff',
+      data: {
+        ext: 'woff',
+        mime: 'font/woff',
+      },
+    },
   ];
 
   for (const { data, path } of files) {
