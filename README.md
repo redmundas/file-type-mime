@@ -94,6 +94,7 @@ Type: `{ ext: string; mime: string } | undefined`
 | opd            | application/vnd.oasis.opendocument.presentation                           |
 | ods            | application/vnd.oasis.opendocument.spreadsheet                            |
 | odt            | application/vnd.oasis.opendocument.text                                   |
+| db             | application/vnd.sqlite3                                                   |
 | 7z             | application/x-7z-compressed                                               |
 | avi            | video/x-msvideo                                                           |
 | mp3            | audio/mp3                                                                 |
@@ -104,6 +105,8 @@ Type: `{ ext: string; mime: string } | undefined`
 | ogv            | video/ogg                                                                 |
 | ogx            | application/ogg                                                           |
 | wav            | audio/wav                                                                 |
+| woff           | font/woff                                                                 |
+| woff2          | font/woff2                                                                |
 | json           | application/json                                                          |
 
 ## License
