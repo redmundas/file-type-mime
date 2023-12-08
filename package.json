@@ -18,8 +18,8 @@
     "dist"
   ],
   "scripts": {
-    "check": "node_modules/@biomejs/biome/bin/biome check src",
-    "format": "node_modules/@biomejs/biome/bin/biome format src --write",
+    "check": "biome check src",
+    "format": "biome format src --write",
     "build": "unbuild",
     "test": "vitest run",
     "coverage": "vitest run --coverage",
