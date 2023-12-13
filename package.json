@@ -22,8 +22,10 @@
     "format": "biome format src --write",
     "build": "unbuild",
     "test": "vitest run",
+    "execute": "node node-test.js",
     "coverage": "vitest run --coverage",
-    "release": "pnpm build && pnpm publish"
+    "release": "pnpm build && pnpm publish",
+    "validate": "pnpm build && pnpm execute"
   },
   "keywords": [
     "mime",
