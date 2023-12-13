@@ -1,6 +1,14 @@
+.github
+coverage
 data
 src
+.editorconfig
+.gitignore
 .prettierrc
+biome.json
+node-test.js
 pnpm-lock.yaml
+renovate.json
 tsconfig.json
 tslint.json
+vitest.config.ts
