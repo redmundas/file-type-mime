@@ -107,6 +107,11 @@ Type: `{ ext: string; mime: string } | undefined`
 | wav            | audio/wav                                                                 |
 | woff           | font/woff                                                                 |
 | woff2          | font/woff2                                                                |
+| deb            | application/x-deb                                                         |
+| flac           | audio/x-flac                                                              |
+| psd            | image/vnd.adobe.photoshop                                                 |
+| wasm           | application/wasm                                                          |
+| webp           | image/webp                                                                |
 | json           | application/json                                                          |
 
 ## License
