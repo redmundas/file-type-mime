@@ -128,6 +128,41 @@ describe('parse', () => {
         mime: 'font/woff',
       },
     },
+    {
+      path: './data/sample.webp',
+      data: {
+        ext: 'webp',
+        mime: 'image/webp',
+      },
+    },
+    {
+      path: './data/sample.psd',
+      data: {
+        ext: 'psd',
+        mime: 'image/vnd.adobe.photoshop',
+      },
+    },
+    {
+      path: './data/sample.flac',
+      data: {
+        ext: 'flac',
+        mime: 'audio/x-flac',
+      },
+    },
+    {
+      path: './data/sample.wasm',
+      data: {
+        ext: 'wasm',
+        mime: 'application/wasm',
+      },
+    },
+    {
+      path: './data/sample.deb',
+      data: {
+        ext: 'deb',
+        mime: 'application/x-deb',
+      },
+    },
   ];
 
   for (const { data, path } of files) {
