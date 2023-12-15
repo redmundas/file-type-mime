@@ -124,4 +124,7 @@ export const signatures: Signature[] = [
     'application/x-deb',
     [0x21, 0x3c, 0x61, 0x72, 0x63, 0x68, 0x3e, 0x0a],
   ],
+  ['exe', 'application/x-msdownload', [0x4d, 0x5a]],
+  ['exe', 'application/x-msdownload', [0x5a, 0x4d]],
+  ['class', 'application/java-vm', [0xca, 0xfe, 0xba, 0xbe]],
 ];
