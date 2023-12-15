@@ -163,6 +163,20 @@ describe('parse', () => {
         mime: 'application/x-deb',
       },
     },
+    {
+      path: './data/sample.exe',
+      data: {
+        ext: 'exe',
+        mime: 'application/x-msdownload',
+      },
+    },
+    {
+      path: './data/sample.class',
+      data: {
+        ext: 'class',
+        mime: 'application/java-vm',
+      },
+    },
   ];
 
   for (const { data, path } of files) {
