@@ -112,6 +112,8 @@ Type: `{ ext: string; mime: string } | undefined`
 | psd            | image/vnd.adobe.photoshop                                                 |
 | wasm           | application/wasm                                                          |
 | webp           | image/webp                                                                |
+| class          | application/java-vm                                                       |
+| exe            | application/x-msdownload                                                  |
 | json           | application/json                                                          |
 
 ## License
