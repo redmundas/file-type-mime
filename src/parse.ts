@@ -1,8 +1,9 @@
-import { compareBytes, getString } from './bytes';
+import { compareBytes } from './bytes';
 import { Signature, signatures as samples } from './signatures';
+import { parseTxtLikeFiles } from './txt';
 import type { Options, Result } from './types';
 import { findMatches, getUpperLimit } from './utils';
-import parseZipLikeFiles from './zip';
+import { parseZipLikeFiles } from './zip';
 
 // Upper limit needs to be not less than the longest sample + offset
 const UPPER_LIMIT = getUpperLimit(samples);
@@ -70,11 +71,5 @@ function parseBytes(
 }
 
 function parseExtraTypes(buffer: ArrayBuffer): Result | undefined {
-  try {
-    const data = getString(buffer);
-    JSON.parse(data);
-    return { ext: 'json', mime: 'application/json' };
-  } catch {
-    return undefined;
-  }
+  return parseTxtLikeFiles(buffer);
 }

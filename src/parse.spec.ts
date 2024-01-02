@@ -208,9 +208,18 @@ describe('parse', () => {
     ).to.eql(result);
   });
 
-  test('parse with extra option', () => {
+  test('parse json file with extra option', () => {
     const result = { ext: 'json', mime: 'application/json' };
     const file = resolve('./data/sample.json');
+    const buffer = readFileSync(file);
+
+    expect(parse(buffer)).to.eql(undefined);
+    expect(parse(buffer, { extra: true })).to.eql(result);
+  });
+
+  test('parse text file with extra option', () => {
+    const result = { ext: 'txt', mime: 'text/plain' };
+    const file = resolve('./data/sample.txt');
     const buffer = readFileSync(file);
 
     expect(parse(buffer)).to.eql(undefined);

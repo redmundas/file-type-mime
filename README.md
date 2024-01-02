@@ -60,7 +60,7 @@ A buffer representing file data
 Type: `{ extra?: boolean; hint?: { ext?: string; mime?: string } }`
 
 - hint - used to short-circuit general flow by filtering signatures list
-- extra - used to parse additional file type formats (like json)
+- extra - used to parse additional file type formats (like json, txt)
 
 ### Return
 
@@ -115,6 +115,7 @@ Type: `{ ext: string; mime: string } | undefined`
 | class          | application/java-vm                                                       |
 | exe            | application/x-msdownload                                                  |
 | json           | application/json                                                          |
+| txt            | text/plain                                                                |
 
 ## License
 [![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fredmundas%2Ffile-type-mime.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2Fredmundas%2Ffile-type-mime?ref=badge_large)
