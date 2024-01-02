@@ -3,7 +3,7 @@ import type { Result } from './types';
 
 // https://en.wikipedia.org/wiki/ZIP_(file_format)#File_headers
 
-export default function parseZipLikeFiles(
+export function parseZipLikeFiles(
   buffer: ArrayBuffer,
   result: { ext: string; mime: string },
 ): Result | undefined {
