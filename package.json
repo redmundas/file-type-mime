@@ -48,12 +48,12 @@
   "license": "MIT",
   "devDependencies": {
     "@biomejs/biome": "^1.4.1",
-    "@types/node": "^20.10.4",
-    "@vitest/coverage-v8": "^1.0.4",
+    "@types/node": "^20.10.6",
+    "@vitest/coverage-v8": "^1.1.1",
     "ts-node": "^10.9.2",
     "typescript": "^5.3.3",
     "unbuild": "^2.0.0",
-    "vitest": "^1.0.4"
+    "vitest": "^1.1.1"
   },
   "nyc": {
     "extension": [
