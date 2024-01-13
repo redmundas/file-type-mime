@@ -33,8 +33,8 @@ importers:
   websites/file-type-mime:
     dependencies:
       file-type-mime:
-        specifier: workspace:^
-        version: link:../../packages/file-type-mime
+        specifier: ^0.3.5
+        version: 0.3.5
     devDependencies:
       '@sveltejs/adapter-auto':
         specifier: ^3.0.0
@@ -2143,6 +2143,10 @@ packages:
     dependencies:
       flat-cache: 3.2.0
     dev: true
+
+  /file-type-mime@0.3.5:
+    resolution: {integrity: sha512-oIHpz0FdILaK8/HzD52jw278LCFpokASmMIFetgDJ8SQut/pZEjzgr8CgaRcMMfWUSYUSQvMa4GOuaZ5bkPPzA==}
+    dev: false
 
   /fill-range@7.0.1:
     resolution: {integrity: sha512-qOo9F+dMUmC2Lcb4BbVvnKJxTPjCm+RRpe4gDuGrzkL7mEVl/djYSu2OdQ2Pa302N4oqkSg9ir6jaLWJ2USVpQ==}
