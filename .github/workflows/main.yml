@@ -39,15 +39,19 @@ jobs:
             ${{ runner.os }}-pnpm-store-
 
       - name: Install dependencies
+        working-directory: packages/file-type-mime
         run: pnpm install --prefer-offline --frozen-lockfile
 
       - name: Validate code
+        working-directory: packages/file-type-mime
         run: pnpm check
 
       - name: Format code
+        working-directory: packages/file-type-mime
         run: pnpm format
 
       - name: Test code
+        working-directory: packages/file-type-mime
         run: pnpm test
 
       - name: Ensure clean repo
@@ -60,6 +64,7 @@ jobs:
           fi
 
       - name: Build code
+        working-directory: packages/file-type-mime
         run: pnpm build
 
       - name: Upload assets
