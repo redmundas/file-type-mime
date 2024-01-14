@@ -34,7 +34,7 @@ importers:
     dependencies:
       file-type-mime:
         specifier: ^0.3.5
-        version: 0.3.5
+        version: link:../../packages/file-type-mime
     devDependencies:
       '@sveltejs/adapter-auto':
         specifier: ^3.0.0
@@ -46,8 +46,8 @@ importers:
         specifier: ^3.0.0
         version: 3.0.1(svelte@4.2.8)(vite@5.0.11)
       '@types/eslint':
-        specifier: 8.56.0
-        version: 8.56.0
+        specifier: 8.56.2
+        version: 8.56.2
       '@typescript-eslint/eslint-plugin':
         specifier: ^6.0.0
         version: 6.18.1(@typescript-eslint/parser@6.18.1)(eslint@8.56.0)(typescript@5.3.3)
@@ -1066,8 +1066,8 @@ packages:
     resolution: {integrity: sha512-4Kh9a6B2bQciAhf7FSuMRRkUWecJgJu9nPnx3yzpsfXX/c50REIqpHY4C82bXP90qrLtXtkDxTZosYO3UpOwlA==}
     dev: true
 
-  /@types/eslint@8.56.0:
-    resolution: {integrity: sha512-FlsN0p4FhuYRjIxpbdXovvHQhtlG05O1GG/RNWvdAxTboR438IOTwmrY/vLA+Xfgg06BTkP045M3vpFwTMv1dg==}
+  /@types/eslint@8.56.2:
+    resolution: {integrity: sha512-uQDwm1wFHmbBbCZCqAlq6Do9LYwByNZHWzXppSnay9SuwJ+VRbjkbLABer54kcPnMSlG6Fdiy2yaFXm/z9Z5gw==}
     dependencies:
       '@types/estree': 1.0.5
       '@types/json-schema': 7.0.15
@@ -2143,10 +2143,6 @@ packages:
     dependencies:
       flat-cache: 3.2.0
     dev: true
-
-  /file-type-mime@0.3.5:
-    resolution: {integrity: sha512-oIHpz0FdILaK8/HzD52jw278LCFpokASmMIFetgDJ8SQut/pZEjzgr8CgaRcMMfWUSYUSQvMa4GOuaZ5bkPPzA==}
-    dev: false
 
   /fill-range@7.0.1:
     resolution: {integrity: sha512-qOo9F+dMUmC2Lcb4BbVvnKJxTPjCm+RRpe4gDuGrzkL7mEVl/djYSu2OdQ2Pa302N4oqkSg9ir6jaLWJ2USVpQ==}
