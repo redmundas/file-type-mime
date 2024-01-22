@@ -1,38 +1,121 @@
-# create-svelte
+# file-type-mime
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fredmundas%2Ffile-type-mime.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Fredmundas%2Ffile-type-mime?ref=badge_shield)
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/main/packages/create-svelte).
+Utility to parse mime type from a file content.
 
-## Creating a project
+## Usage
 
-If you're seeing this, you've probably already done this step. Congrats!
+**Browser (react)**
 
-```bash
-# create a new project in the current directory
-npm create svelte@latest
+```javascript
+import { parse } from 'file-type-mime';
 
-# create a new project in my-app
-npm create svelte@latest my-app
+export default function fileUpload() {
+  async function onChange(e) {
+    const [file] = e.target.files;
+    const buffer = await file.arrayBuffer();
+    const result = parse(buffer);
+
+    console.log('MIME_TYPE', result);
+  }
+
+  return (
+    <form>
+      <input type="file" onChange={onChange}>
+    </form>
+  );
+}
 ```
 
-## Developing
+**Node.js**
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+```javascript
+import { parse } from 'file-type-mime';
+import { readFileSync } from 'node:fs';
+import { resolve } from 'node:path';
 
-```bash
-npm run dev
+const file = resolve('./path/to/file.pdf');
+const buffer = readFileSync(file);
+const result = parse(buffer);
 
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
+console.log('MIME_TYPE', result);
 ```
 
-## Building
+## API
 
-To create a production version of your app:
+### Signature
 
-```bash
-npm run build
-```
+`function parse(buffer: ArrayBuffer, options: Options = {}): Result | undefined`
 
-You can preview the production build with `npm run preview`.
+### Arguments
 
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
+#### buffer
+
+Type: `ArrayBuffer`
+
+A buffer representing file data
+
+#### options (optional)
+
+Type: `{ extra?: boolean; hint?: { ext?: string; mime?: string } }`
+
+- hint - used to short-circuit general flow by filtering signatures list
+- extra - used to parse additional file type formats (like json, txt)
+
+### Return
+
+Type: `{ ext: string; mime: string } | undefined`
+
+## Supported file types
+
+(more to come...)
+
+| File extension | Content (mime) type                                                       |
+| -------------- | ------------------------------------------------------------------------- |
+| bmp            | image/bmp                                                                 |
+| gif            | image/gif                                                                 |
+| ico            | image/x-icon                                                              |
+| jpg            | image/jpeg                                                                |
+| heic           | image/heic                                                                |
+| png            | image/png                                                                 |
+| tiff           | image/tiff                                                                |
+| pdf            | application/pdf                                                           |
+| rtf            | application/rtf                                                           |
+| epub           | application/epub+zip                                                      |
+| gz             | application/gzip                                                          |
+| jar            | application/java-archive                                                  |
+| zip            | application/zip                                                           |
+| bz2            | application/x-bzip2                                                       |
+| rar            | application/x-rar-compressed                                              |
+| tar            | application/x-tar                                                         |
+| docx           | application/vnd.openxmlformats-officedocument.wordprocessingml.document   |
+| pptx           | application/vnd.openxmlformats-officedocument.presentationml.presentation |
+| xlsx           | application/vnd.openxmlformats-officedocument.spreadsheetml.sheet         |
+| opd            | application/vnd.oasis.opendocument.presentation                           |
+| ods            | application/vnd.oasis.opendocument.spreadsheet                            |
+| odt            | application/vnd.oasis.opendocument.text                                   |
+| db             | application/vnd.sqlite3                                                   |
+| 7z             | application/x-7z-compressed                                               |
+| avi            | video/x-msvideo                                                           |
+| mp3            | audio/mp3                                                                 |
+| mp4            | video/mp4                                                                 |
+| oga            | audio/ogg                                                                 |
+| ogg            | audio/ogg                                                                 |
+| ogm            | video/ogg                                                                 |
+| ogv            | video/ogg                                                                 |
+| ogx            | application/ogg                                                           |
+| wav            | audio/wav                                                                 |
+| woff           | font/woff                                                                 |
+| woff2          | font/woff2                                                                |
+| deb            | application/x-deb                                                         |
+| flac           | audio/x-flac                                                              |
+| psd            | image/vnd.adobe.photoshop                                                 |
+| wasm           | application/wasm                                                          |
+| webp           | image/webp                                                                |
+| class          | application/java-vm                                                       |
+| exe            | application/x-msdownload                                                  |
+| json           | application/json                                                          |
+| txt            | text/plain                                                                |
+
+## License
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fredmundas%2Ffile-type-mime.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2Fredmundas%2Ffile-type-mime?ref=badge_large)
