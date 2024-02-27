@@ -34,7 +34,7 @@ importers:
     dependencies:
       file-type-mime:
         specifier: ^0.3.8
-        version: 0.3.8
+        version: 0.3.9
     devDependencies:
       '@sveltejs/adapter-auto':
         specifier: ^3.1.1
@@ -2413,8 +2413,8 @@ packages:
       flat-cache: 3.2.0
     dev: true
 
-  /file-type-mime@0.3.8:
-    resolution: {integrity: sha512-blOfqfvaSN3d6C/i7L7j3EFrwHUVhjDgzmBtcdMEQuqQOqK9H3RqRJujmopWSFLOCAWJbAiqtRC26fs3Fv9u4g==}
+  /file-type-mime@0.3.9:
+    resolution: {integrity: sha512-MwD5q0VbhsOCmJqWQFJOB1s4QqbHZJsSv9ObsZzGWdtkmQTgmfgr+vjix8FshbG2x+6p1syBLtCp7Ei/KsluNw==}
     dev: false
 
   /fill-range@7.0.1:
