@@ -1,5 +1,5 @@
 import { compareBytes } from './bytes';
-import { Signature, signatures as samples } from './signatures';
+import { type Signature, signatures as samples } from './signatures';
 import { parseTxtLikeFiles } from './txt';
 import type { Options, Result } from './types';
 import { findMatches, getUpperLimit } from './utils';
