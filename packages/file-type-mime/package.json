@@ -1,6 +1,6 @@
 {
   "name": "file-type-mime",
-  "version": "0.3.9",
+  "version": "0.3.10",
   "description": "Utility to parse mime type from a file content",
   "homepage": "https://file-type-mime.vercel.app",
   "sideEffects": false,
@@ -34,9 +34,18 @@
     "type",
     "content",
     "content-type",
+    "mime-type",
     "parse",
     "bytes",
-    "json"
+    "json",
+    "text",
+    "image",
+    "font",
+    "audio",
+    "video",
+    "pdf",
+    "application",
+    "zip"
   ],
   "author": {
     "name": "Edmundas Ramanauskas",
