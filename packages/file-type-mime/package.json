@@ -21,7 +21,7 @@
   "scripts": {
     "check": "biome check src",
     "format": "biome format src --write",
-    "build": "unbuild",
+    "build": "tsup src/index.ts --dts --format esm,cjs --minify",
     "test": "vitest run",
     "execute": "node node-test.js",
     "coverage": "vitest run --coverage",
@@ -61,8 +61,8 @@
     "@types/node": "^20.11.17",
     "@vitest/coverage-v8": "^1.2.2",
     "ts-node": "^10.9.2",
+    "tsup": "^8.1.0",
     "typescript": "^5.3.3",
-    "unbuild": "^2.0.0",
     "vitest": "^1.2.2"
   },
   "nyc": {
