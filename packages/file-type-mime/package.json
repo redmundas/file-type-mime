@@ -21,7 +21,7 @@
   "scripts": {
     "check": "biome check src",
     "format": "biome format src --write",
-    "build": "tsup src/index.ts --dts --format esm,cjs --minify",
+    "build": "tsup",
     "test": "vitest run",
     "execute": "node node-test.js",
     "coverage": "vitest run --coverage",
