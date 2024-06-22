@@ -36,6 +36,6 @@
   },
   "type": "module",
   "dependencies": {
-    "file-type-mime": "^0.3.8"
+    "file-type-mime": "^0.4.0"
   }
 }
