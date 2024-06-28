@@ -1,7 +1,13 @@
 {
-  "name": "website",
+  "name": "demo-website",
+  "description": "Demo website of file-type-mime",
   "version": "0.0.1",
-  "private": true,
+  "license": "MIT",
+  "type": "module",
+  "author": {
+    "name": "Edmundas Ramanauskas",
+    "email": "edmundas.ramanauskas@gmail.com"
+  },
   "scripts": {
     "start": "vite dev",
     "build": "vite build",
@@ -34,7 +40,6 @@
     "vite": "^5.1.1",
     "vitest": "^1.2.2"
   },
-  "type": "module",
   "dependencies": {
     "file-type-mime": "^0.4.0"
   }

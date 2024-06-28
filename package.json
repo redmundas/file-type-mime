@@ -1,0 +1,21 @@
+{
+  "name": "monorepo",
+  "version": "0.0.0",
+  "description": "monorepo for file-type-mime and related packages",
+  "license": "MIT",
+  "author": {
+    "name": "Edmundas Ramanauskas",
+    "email": "edmundas.ramanauskas@gmail.com"
+  },
+  "scripts": {
+    "version": "changeset version",
+    "publish": "changeset publish"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/redmundas/file-type-mime.git"
+  },
+  "devDependencies": {
+    "@changesets/cli": "^2.27.6"
+  }
+}
