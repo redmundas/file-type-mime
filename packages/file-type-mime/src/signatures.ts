@@ -1,5 +1,6 @@
 // https://en.wikipedia.org/wiki/List_of_file_signatures
 // https://en.wikipedia.org/wiki/List_of_archive_formats
+// https://www.iana.org/assignments/media-types/media-types.xhtml
 
 export type Options = { exact?: boolean; offset?: number };
 export type BaseSignature =
@@ -127,4 +128,5 @@ export const signatures: Signature[] = [
   ['exe', 'application/x-msdownload', [0x4d, 0x5a]],
   ['exe', 'application/x-msdownload', [0x5a, 0x4d]],
   ['class', 'application/java-vm', [0xca, 0xfe, 0xba, 0xbe]],
+  ['parquet', 'application/vnd.apache.parquet', [0x50, 0x41, 0x52, 0x31]],
 ];

@@ -177,6 +177,13 @@ describe('parse', () => {
         mime: 'application/java-vm',
       },
     },
+    {
+      path: './data/sample.parquet',
+      data: {
+        ext: 'parquet',
+        mime: 'application/vnd.apache.parquet',
+      },
+    },
   ];
 
   for (const { data, path } of files) {
