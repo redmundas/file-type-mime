@@ -89,7 +89,7 @@ importers:
         version: 3.8.4(@babel/core@7.24.7)(postcss-load-config@4.0.2(postcss@8.4.39)(ts-node@10.9.2(@types/node@20.14.10)(typescript@5.5.3)))(postcss@8.4.39)(svelte@4.2.18)
       tailwindcss:
         specifier: ^3.4.1
-        version: 3.4.5(ts-node@10.9.2(@types/node@20.14.10)(typescript@5.5.3))
+        version: 3.4.6(ts-node@10.9.2(@types/node@20.14.10)(typescript@5.5.3))
       tslib:
         specifier: ^2.4.1
         version: 2.6.3
@@ -1135,8 +1135,8 @@ packages:
   electron-to-chromium@1.4.744:
     resolution: {integrity: sha512-nAGcF0yeKKfrP13LMFr5U1eghfFSvFLg302VUFzWlcjPOnUYd52yU5x6PBYrujhNbc4jYmZFrGZFK+xasaEzVA==}
 
-  electron-to-chromium@1.4.828:
-    resolution: {integrity: sha512-QOIJiWpQJDHAVO4P58pwb133Cwee0nbvy/MV1CwzZVGpkH1RX33N3vsaWRCpR6bF63AAq366neZrRTu7Qlsbbw==}
+  electron-to-chromium@1.4.829:
+    resolution: {integrity: sha512-5qp1N2POAfW0u1qGAxXEtz6P7bO1m6gpZr5hdf5ve6lxpLM7MpiM4jIPz7xcrNlClQMafbyUDDWjlIQZ1Mw0Rw==}
 
   emoji-regex@8.0.0:
     resolution: {integrity: sha512-MSjYzcWNOA0ewAHpz0MxpYFvwg6yjy1NG3xteoqz644VCo/RPgnr1/GGt+ic3iJTzQ8Eu3TdM14SawnVUmGE6A==}
@@ -1712,6 +1712,9 @@ packages:
   node-releases@2.0.14:
     resolution: {integrity: sha512-y10wOWt8yZpqXmOgRo77WaHEmhYQYGNA6y421PKsKYWEK8aW+cqAphborZDhqfyKrbZEN92CN1X2KbafY2s7Yw==}
 
+  node-releases@2.0.17:
+    resolution: {integrity: sha512-Ww6ZlOiEQfPfXM45v17oabk77Z7mg5bOt7AjDyzy7RjK9OrLrLC8dyZQoAPEOtFX9SaNf1Tdvr5gRJWdTJj7GA==}
+
   normalize-path@3.0.0:
     resolution: {integrity: sha512-6eZs5Ls3WtCisHWp9S2GUy8dqkpGi4BVSz3GaqiE6ezub0512ESztXUwUB6C6IKbQkY2Pnb/mD4WYojCRwcwLA==}
     engines: {node: '>=0.10.0'}
@@ -2205,8 +2208,8 @@ packages:
     resolution: {integrity: sha512-d0FdzYIiAePqRJEb90WlJDkjUEx42xhivxN8muUBmfZnP+tzUgz12DJ2hRJi8sIHCME7jeK1PTMgKPSfTd8JrA==}
     engines: {node: '>=16'}
 
-  tailwindcss@3.4.5:
-    resolution: {integrity: sha512-DlTxttYcogpDfx3tf/8jfnma1nfAYi2cBUYV2YNoPPecwmO3YGiFlOX9D8tGAu+EDF38ryBzvrDKU/BLMsUwbw==}
+  tailwindcss@3.4.6:
+    resolution: {integrity: sha512-1uRHzPB+Vzu57ocybfZ4jh5Q3SdlH7XW23J5sQoM9LhE9eIOlzxer/3XPSsycvih3rboRsvt0QCmzSrqyOYUIA==}
     engines: {node: '>=14.0.0'}
     hasBin: true
 
@@ -3448,8 +3451,8 @@ snapshots:
   browserslist@4.23.2:
     dependencies:
       caniuse-lite: 1.0.30001642
-      electron-to-chromium: 1.4.828
-      node-releases: 2.0.14
+      electron-to-chromium: 1.4.829
+      node-releases: 2.0.17
       update-browserslist-db: 1.1.0(browserslist@4.23.2)
     optional: true
 
@@ -3592,7 +3595,7 @@ snapshots:
 
   electron-to-chromium@1.4.744: {}
 
-  electron-to-chromium@1.4.828:
+  electron-to-chromium@1.4.829:
     optional: true
 
   emoji-regex@8.0.0: {}
@@ -4197,6 +4200,9 @@ snapshots:
 
   node-releases@2.0.14: {}
 
+  node-releases@2.0.17:
+    optional: true
+
   normalize-path@3.0.0: {}
 
   normalize-range@0.1.2: {}
@@ -4666,7 +4672,7 @@ snapshots:
       magic-string: 0.30.10
       periscopic: 3.1.0
 
-  tailwindcss@3.4.5(ts-node@10.9.2(@types/node@20.14.10)(typescript@5.5.3)):
+  tailwindcss@3.4.6(ts-node@10.9.2(@types/node@20.14.10)(typescript@5.5.3)):
     dependencies:
       '@alloc/quick-lru': 5.2.0
       arg: 5.0.2
