@@ -1,4 +1,5 @@
 # file-type-mime
+
 [![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fredmundas%2Ffile-type-mime.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Fredmundas%2Ffile-type-mime?ref=badge_shield)
 
 Utility to parse mime type from a file content.
@@ -30,15 +31,15 @@ export default function fileUpload() {
 **Node.js**
 
 ```javascript
-import { parse } from 'file-type-mime';
-import { readFileSync } from 'node:fs';
-import { resolve } from 'node:path';
+import { parse } from "file-type-mime";
+import { readFileSync } from "node:fs";
+import { resolve } from "node:path";
 
-const file = resolve('./path/to/file.pdf');
+const file = resolve("./path/to/file.pdf");
 const buffer = readFileSync(file);
 const result = parse(buffer);
 
-console.log('MIME_TYPE', result);
+console.log("MIME_TYPE", result);
 ```
 
 ## API
@@ -114,8 +115,10 @@ Type: `{ ext: string; mime: string } | undefined`
 | webp           | image/webp                                                                |
 | class          | application/java-vm                                                       |
 | exe            | application/x-msdownload                                                  |
+| parquet        | application/vnd.apache.parquet                                            |
 | json           | application/json                                                          |
 | txt            | text/plain                                                                |
 
 ## License
+
 [![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fredmundas%2Ffile-type-mime.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2Fredmundas%2Ffile-type-mime?ref=badge_large)
