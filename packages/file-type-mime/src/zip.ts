@@ -7,41 +7,52 @@ export function parseZipLikeFiles(
   buffer: ArrayBuffer,
   result: { ext: string; mime: string },
 ): Result | undefined {
-  const size = getUint16(buffer, 26);
-  const name = getString(buffer, 30, size);
-  const [identifier] = name.split('/');
-  const xmlFormat = name.endsWith('.xml');
+  let offset = 0;
+  while (offset + 30 < buffer.byteLength) {
+    const rest = getUint16(buffer, offset + 18);
+    const size = getUint16(buffer, offset + 26);
+    const skip = getUint16(buffer, offset + 28);
+    const name = getString(buffer, offset + 30, size);
+    const [identifier] = name.split('/');
+    const xmlFormat = name.endsWith('.xml');
 
-  if (identifier === 'META-INF') {
-    return {
-      ext: 'jar',
-      mime: 'application/java-archive',
-    };
-  }
+    if (identifier === 'META-INF') {
+      return {
+        ext: 'jar',
+        mime: 'application/java-archive',
+      };
+    }
 
-  if (identifier === 'ppt' && xmlFormat) {
-    return {
-      ext: 'pptx',
-      mime: 'application/vnd.openxmlformats-officedocument.presentationml.presentation',
-    };
-  }
+    if (identifier === 'ppt' && xmlFormat) {
+      return {
+        ext: 'pptx',
+        mime: 'application/vnd.openxmlformats-officedocument.presentationml.presentation',
+      };
+    }
 
-  if (identifier === 'word' && xmlFormat) {
-    return {
-      ext: 'docx',
-      mime: 'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
-    };
-  }
+    if (identifier === 'word' && xmlFormat) {
+      return {
+        ext: 'docx',
+        mime: 'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
+      };
+    }
 
-  if (identifier === 'xl' && xmlFormat) {
-    return {
-      ext: 'xlsx',
-      mime: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
-    };
-  }
+    if (identifier === 'xl' && xmlFormat) {
+      return {
+        ext: 'xlsx',
+        mime: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
+      };
+    }
 
-  if (identifier === 'mimetype') {
-    return parseOpenDocumentFile(buffer, size) ?? result;
+    if (identifier === 'mimetype') {
+      return parseOpenDocumentFile(buffer, size) ?? result;
+    }
+
+    if (!rest) {
+      break;
+    }
+
+    offset = offset + 30 + size + skip + rest;
   }
 
   return result;

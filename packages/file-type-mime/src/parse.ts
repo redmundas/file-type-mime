@@ -12,21 +12,19 @@ export default function parse(
   buffer: ArrayBuffer,
   { extra = false, hint }: Options = {},
 ): Result | undefined {
-  const bytes = new Uint8Array(buffer.slice(0, UPPER_LIMIT));
-
   // use the hint to short-circuit the parsing
   // in case it's incorect - continue main flow
   if (hint) {
     const matches = findMatches(samples, hint);
     if (matches.length > 0) {
-      const result = parseBytes(bytes, matches);
+      const result = parseBytes(buffer, matches);
       if (result !== undefined) {
         return result;
       }
     }
   }
 
-  const result = parseBytes(bytes, samples);
+  const result = parseBytes(buffer, samples);
 
   if (result) {
     return result;
@@ -40,9 +38,10 @@ export default function parse(
 }
 
 function parseBytes(
-  bytes: Uint8Array,
+  buffer: ArrayBuffer,
   signatures: Signature[],
 ): Result | undefined {
+  const bytes = new Uint8Array(buffer.slice(0, UPPER_LIMIT));
   for (const [
     ext,
     mime,
@@ -52,7 +51,8 @@ function parseBytes(
   ] of signatures) {
     if (compareBytes(bytes, sample, offset)) {
       if (ext === 'zip' && !exact) {
-        return parseZipLikeFiles(bytes.buffer, { ext, mime });
+        // pass full buffer to zip parser
+        return parseZipLikeFiles(buffer, { ext, mime });
       }
 
       if (!exact && subSignatures.length) {
