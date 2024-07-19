@@ -4,6 +4,7 @@
   "version": "0.0.1",
   "license": "MIT",
   "type": "module",
+  "private": true,
   "author": {
     "name": "Edmundas Ramanauskas",
     "email": "edmundas.ramanauskas@gmail.com"
