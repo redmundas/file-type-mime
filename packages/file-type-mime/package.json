@@ -1,6 +1,6 @@
 {
   "name": "file-type-mime",
-  "version": "0.4.1",
+  "version": "0.4.2",
   "description": "Utility to parse mime type from a file content",
   "homepage": "https://file-type-mime.vercel.app",
   "sideEffects": false,
