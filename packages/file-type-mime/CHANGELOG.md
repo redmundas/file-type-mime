@@ -1,5 +1,11 @@
 # file-type-mime
 
+## 0.4.3
+
+### Patch Changes
+
+- 1aa7d72: Fix parsing of open document file formats
+
 ## 0.4.2
 
 ### Patch Changes
