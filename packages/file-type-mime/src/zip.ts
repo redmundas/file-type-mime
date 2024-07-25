@@ -48,10 +48,6 @@ export function parseZipLikeFiles(
       return parseOpenDocumentFile(buffer, size) ?? result;
     }
 
-    if (!rest) {
-      break;
-    }
-
     offset = offset + 30 + size + skip + rest;
   }
 
