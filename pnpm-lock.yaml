@@ -22,7 +22,7 @@ importers:
         version: 20.14.13
       '@vitest/coverage-v8':
         specifier: ^2.0.0
-        version: 2.0.4(vitest@2.0.4(@types/node@20.14.13))
+        version: 2.0.5(vitest@2.0.4(@types/node@20.14.13))
       ts-node:
         specifier: ^10.9.2
         version: 10.9.2(@types/node@20.14.13)(typescript@5.5.4)
@@ -167,11 +167,6 @@ packages:
     resolution: {integrity: sha512-EStJpq4OuY8xYfhGVXngigBJRWxftKX9ksiGDnmlY3o7B/V7KIAc9X4oiK87uPJSc/vs5L869bem5fhZa8caZw==}
     engines: {node: '>=6.9.0'}
 
-  '@babel/parser@7.24.8':
-    resolution: {integrity: sha512-WzfbgXOkGzZiXXCqk43kKwZjzwx4oulxZi3nq2TYL9mOjQv6kYwul9mz6ID36njuL7Xkp6nJEfok848Zj10j/w==}
-    engines: {node: '>=6.0.0'}
-    hasBin: true
-
   '@babel/parser@7.25.0':
     resolution: {integrity: sha512-CzdIU9jdP0dg7HdyB+bHvDJGagUv+qtzZt5rYCWwW6tITNqV9odjp6Qu41gkG0ca5UfdDUWrKkiAnHHdGRnOrA==}
     engines: {node: '>=6.0.0'}
@@ -187,10 +182,6 @@ packages:
 
   '@babel/traverse@7.25.2':
     resolution: {integrity: sha512-s4/r+a7xTnny2O6FcZzqgT6nE4/GHEdcqj4qAeglbUOh0TeglEfmNJFAd/OLoVtGd6ZhAO8GCVvCNUO5t/VJVQ==}
-    engines: {node: '>=6.9.0'}
-
-  '@babel/types@7.24.9':
-    resolution: {integrity: sha512-xm8XrMKz0IlUdocVbYJe0Z9xEgidU7msskG8BbhnTPK/HZ2z/7FP7ykqPgrUH+C+r414mNfNWam1f2vqOjqjYQ==}
     engines: {node: '>=6.9.0'}
 
   '@babel/types@7.25.2':
@@ -968,10 +959,10 @@ packages:
     resolution: {integrity: sha512-cDF0/Gf81QpY3xYyJKDV14Zwdmid5+uuENhjH2EqFaF0ni+yAyq/LzMaIJdhNJXZI7uLzwIlA+V7oWoyn6Curg==}
     engines: {node: ^18.18.0 || >=20.0.0}
 
-  '@vitest/coverage-v8@2.0.4':
-    resolution: {integrity: sha512-i4lx/Wpg5zF1h2op7j0wdwuEQxaL/YTwwQaKuKMHYj7MMh8c7I4W7PNfOptZBCSBZI0z1qwn64o0pM/pA8Tz1g==}
+  '@vitest/coverage-v8@2.0.5':
+    resolution: {integrity: sha512-qeFcySCg5FLO2bHHSa0tAZAOnAUbp4L6/A5JDuj9+bt53JREl8hpLjLHEWF0e/gWc8INVpJaqA7+Ene2rclpZg==}
     peerDependencies:
-      vitest: 2.0.4
+      vitest: 2.0.5
 
   '@vitest/expect@2.0.4':
     resolution: {integrity: sha512-39jr5EguIoanChvBqe34I8m1hJFI4+jxvdOpD7gslZrVQBKhh8H9eD7J/LJX4zakrw23W+dITQTDqdt43xVcJw==}
@@ -1133,8 +1124,8 @@ packages:
   caniuse-lite@1.0.30001611:
     resolution: {integrity: sha512-19NuN1/3PjA3QI8Eki55N8my4LzfkMCRLgCVfrl/slbSAchQfV0+GwjPrK3rq37As4UCLlM/DHajbKkAqbv92Q==}
 
-  caniuse-lite@1.0.30001644:
-    resolution: {integrity: sha512-YGvlOZB4QhZuiis+ETS0VXR+MExbFf4fZYYeMTEE0aTQd/RdIjkTyZjLrbYVKnHzppDvnOhritRVv+i7Go6mHw==}
+  caniuse-lite@1.0.30001645:
+    resolution: {integrity: sha512-GFtY2+qt91kzyMk6j48dJcwJVq5uTkk71XxE3RtScx7XWRLsO7bU44LOFkOZYR8w9YMS0UhPSYpN/6rAMImmLw==}
 
   chai@5.1.1:
     resolution: {integrity: sha512-pT1ZgP8rPNqUgieVaEY+ryQr6Q4HXNg8Ei9UnLUrjN4IA7dvQC5JB+/kxVcPNDHyBcc/26CXPkbNzq3qwrOEKA==}
@@ -1285,8 +1276,8 @@ packages:
   electron-to-chromium@1.4.744:
     resolution: {integrity: sha512-nAGcF0yeKKfrP13LMFr5U1eghfFSvFLg302VUFzWlcjPOnUYd52yU5x6PBYrujhNbc4jYmZFrGZFK+xasaEzVA==}
 
-  electron-to-chromium@1.5.3:
-    resolution: {integrity: sha512-QNdYSS5i8D9axWp/6XIezRObRHqaav/ur9z1VzCDUCH1XIFOr9WQk5xmgunhsTpjjgDy3oLxO/WMOVZlpUQrlA==}
+  electron-to-chromium@1.5.4:
+    resolution: {integrity: sha512-orzA81VqLyIGUEA77YkVA1D+N+nNfl2isJVjjmOyrlxuooZ19ynb+dOlaDTqd/idKRS9lDCSBmtzM+kyCsMnkA==}
 
   emoji-regex@8.0.0:
     resolution: {integrity: sha512-MSjYzcWNOA0ewAHpz0MxpYFvwg6yjy1NG3xteoqz644VCo/RPgnr1/GGt+ic3iJTzQ8Eu3TdM14SawnVUmGE6A==}
@@ -2772,14 +2763,9 @@ snapshots:
       picocolors: 1.0.1
     optional: true
 
-  '@babel/parser@7.24.8':
-    dependencies:
-      '@babel/types': 7.24.9
-
   '@babel/parser@7.25.0':
     dependencies:
       '@babel/types': 7.25.2
-    optional: true
 
   '@babel/runtime@7.24.7':
     dependencies:
@@ -2805,18 +2791,11 @@ snapshots:
       - supports-color
     optional: true
 
-  '@babel/types@7.24.9':
-    dependencies:
-      '@babel/helper-string-parser': 7.24.8
-      '@babel/helper-validator-identifier': 7.24.7
-      to-fast-properties: 2.0.0
-
   '@babel/types@7.25.2':
     dependencies:
       '@babel/helper-string-parser': 7.24.8
       '@babel/helper-validator-identifier': 7.24.7
       to-fast-properties: 2.0.0
-    optional: true
 
   '@bcoe/v8-coverage@0.2.3': {}
 
@@ -3513,16 +3492,16 @@ snapshots:
       '@typescript-eslint/types': 7.18.0
       eslint-visitor-keys: 3.4.3
 
-  '@vitest/coverage-v8@2.0.4(vitest@2.0.4(@types/node@20.14.13))':
+  '@vitest/coverage-v8@2.0.5(vitest@2.0.4(@types/node@20.14.13))':
     dependencies:
       '@ampproject/remapping': 2.3.0
       '@bcoe/v8-coverage': 0.2.3
-      debug: 4.3.5
+      debug: 4.3.6
       istanbul-lib-coverage: 3.2.2
       istanbul-lib-report: 3.0.1
       istanbul-lib-source-maps: 5.0.6
       istanbul-reports: 3.1.7
-      magic-string: 0.30.10
+      magic-string: 0.30.11
       magicast: 0.3.4
       std-env: 3.7.0
       test-exclude: 7.0.1
@@ -3666,8 +3645,8 @@ snapshots:
 
   browserslist@4.23.2:
     dependencies:
-      caniuse-lite: 1.0.30001644
-      electron-to-chromium: 1.5.3
+      caniuse-lite: 1.0.30001645
+      electron-to-chromium: 1.5.4
       node-releases: 2.0.18
       update-browserslist-db: 1.1.0(browserslist@4.23.2)
     optional: true
@@ -3687,7 +3666,7 @@ snapshots:
 
   caniuse-lite@1.0.30001611: {}
 
-  caniuse-lite@1.0.30001644:
+  caniuse-lite@1.0.30001645:
     optional: true
 
   chai@5.1.1:
@@ -3817,7 +3796,7 @@ snapshots:
 
   electron-to-chromium@1.4.744: {}
 
-  electron-to-chromium@1.5.3:
+  electron-to-chromium@1.5.4:
     optional: true
 
   emoji-regex@8.0.0: {}
@@ -4253,7 +4232,7 @@ snapshots:
   istanbul-lib-source-maps@5.0.6:
     dependencies:
       '@jridgewell/trace-mapping': 0.3.25
-      debug: 4.3.5
+      debug: 4.3.6
       istanbul-lib-coverage: 3.2.2
     transitivePeerDependencies:
       - supports-color
@@ -4371,8 +4350,8 @@ snapshots:
 
   magicast@0.3.4:
     dependencies:
-      '@babel/parser': 7.24.8
-      '@babel/types': 7.24.9
+      '@babel/parser': 7.25.0
+      '@babel/types': 7.25.2
       source-map-js: 1.2.0
 
   make-dir@4.0.0:
