@@ -118,6 +118,7 @@ Type: `{ ext: string; mime: string } | undefined`
 | parquet        | application/vnd.apache.parquet                                            |
 | json           | application/json                                                          |
 | txt            | text/plain                                                                |
+| vsix           | application/vsix                                                          |
 
 ## License
 

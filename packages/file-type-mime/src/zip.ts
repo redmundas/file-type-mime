@@ -16,6 +16,13 @@ export function parseZipLikeFiles(
     const [identifier] = name.split('/');
     const xmlFormat = name.endsWith('.xml');
 
+    if (identifier === 'extension.vsixmanifest') {
+      return {
+        ext: 'vsix',
+        mime: 'application/vsix',
+      };
+    }
+
     if (identifier === 'META-INF') {
       return {
         ext: 'jar',
