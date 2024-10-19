@@ -1,5 +1,11 @@
 # file-type-mime
 
+## 0.4.4
+
+### Patch Changes
+
+- d1602f7: Add support for vsix file format
+
 ## 0.4.3
 
 ### Patch Changes
