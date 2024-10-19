@@ -184,6 +184,13 @@ describe('parse', () => {
         mime: 'application/vnd.apache.parquet',
       },
     },
+    {
+      path: './data/sample.vsix',
+      data: {
+        ext: 'vsix',
+        mime: 'application/vsix',
+      },
+    },
   ];
 
   for (const { data, path } of files) {
