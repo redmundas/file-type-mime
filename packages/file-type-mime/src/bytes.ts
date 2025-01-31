@@ -22,6 +22,22 @@ export function bytesToHex(array: Uint8Array, separator = ' ') {
   return parts.join(separator);
 }
 
+export function stringToBytes(value: string, separator = ' ') {
+  return encoder.encode(value);
+}
+
+export function compareString(array: Uint8Array, value: string, offset = 0) {
+  const bytes = stringToBytes(value);
+  return compareBytes(array, bytes, offset);
+}
+
+export function containsString(buffer: ArrayBuffer, value: string, offset = 0) {
+  return compareString(
+    new Uint8Array(buffer.slice(offset, value.length * 8)),
+    value,
+  );
+}
+
 export function compareBytes(
   source: Uint8Array | number[],
   sample: Uint8Array | (number | null)[],
@@ -47,3 +63,4 @@ function getBufferView(buffer: ArrayBuffer, offset: number, length: number) {
 }
 
 const decoder = new TextDecoder('utf8');
+const encoder = new TextEncoder();

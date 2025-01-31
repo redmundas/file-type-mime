@@ -129,4 +129,8 @@ export const signatures: Signature[] = [
   ['exe', 'application/x-msdownload', [0x5a, 0x4d]],
   ['class', 'application/java-vm', [0xca, 0xfe, 0xba, 0xbe]],
   ['parquet', 'application/vnd.apache.parquet', [0x50, 0x41, 0x52, 0x31]],
+  ['mov', 'video/quicktime', [0x66, 0x72, 0x65, 0x65], { offset: 4 }],
+  ['mov', 'video/quicktime', [0x6d, 0x64, 0x61, 0x74], { offset: 4 }],
+  ['mov', 'video/quicktime', [0x6d, 0x6f, 0x6f, 0x76], { offset: 4 }],
+  ['mov', 'video/quicktime', [0x77, 0x69, 0x64, 0x65], { offset: 4 }],
 ];
