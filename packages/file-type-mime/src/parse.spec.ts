@@ -191,6 +191,27 @@ describe('parse', () => {
         mime: 'application/vsix',
       },
     },
+    {
+      path: './data/sample.mov',
+      data: {
+        ext: 'mov',
+        mime: 'video/quicktime',
+      },
+    },
+    {
+      path: './data/sample.avif',
+      data: {
+        ext: 'avif',
+        mime: 'image/avif',
+      },
+    },
+    {
+      path: './data/sample.m4v',
+      data: {
+        ext: 'm4v',
+        mime: 'video/x-m4v',
+      },
+    },
   ];
 
   for (const { data, path } of files) {

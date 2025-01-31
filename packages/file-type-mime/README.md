@@ -119,6 +119,9 @@ Type: `{ ext: string; mime: string } | undefined`
 | json           | application/json                                                          |
 | txt            | text/plain                                                                |
 | vsix           | application/vsix                                                          |
+| mov            | video/quicktime                                                           |
+| afiv           | image/avif                                                                |
+| m4v            | video/x-m4v                                                               |
 
 ## License
 

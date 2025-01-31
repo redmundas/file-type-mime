@@ -45,7 +45,8 @@
     "video",
     "pdf",
     "application",
-    "zip"
+    "zip",
+    "ftyp"
   ],
   "author": {
     "name": "Edmundas Ramanauskas",

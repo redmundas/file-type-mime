@@ -1,4 +1,5 @@
-import { compareBytes } from './bytes';
+import { compareBytes, containsString } from './bytes';
+import { parseFileTypeBoxFiles } from './ftyp';
 import { type Signature, signatures as samples } from './signatures';
 import { parseTxtLikeFiles } from './txt';
 import type { Options, Result } from './types';
@@ -22,6 +23,10 @@ export default function parse(
         return result;
       }
     }
+  }
+
+  if (containsString(buffer, 'ftyp', 4)) {
+    return parseFileTypeBoxFiles(buffer);
   }
 
   const result = parseBytes(buffer, samples);
