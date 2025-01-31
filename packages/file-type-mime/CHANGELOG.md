@@ -1,5 +1,11 @@
 # file-type-mime
 
+## 0.4.6
+
+### Patch Changes
+
+- d237bff: Add support for basic ftyp file formats
+
 ## 0.4.4
 
 ### Patch Changes
