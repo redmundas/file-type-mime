@@ -74,7 +74,7 @@ importers:
         version: 10.1.1(eslint@9.22.0(jiti@2.4.2))
       eslint-plugin-svelte:
         specifier: ^3.0.0
-        version: 3.2.1(eslint@9.22.0(jiti@2.4.2))(svelte@5.23.1)(ts-node@10.9.2(@types/node@22.13.10)(typescript@5.8.2))
+        version: 3.3.0(eslint@9.22.0(jiti@2.4.2))(svelte@5.23.1)(ts-node@10.9.2(@types/node@22.13.10)(typescript@5.8.2))
       postcss:
         specifier: ^8.4.35
         version: 8.5.3
@@ -1453,8 +1453,8 @@ packages:
     peerDependencies:
       eslint: '>=7.0.0'
 
-  eslint-plugin-svelte@3.2.1:
-    resolution: {integrity: sha512-Ht+9kGmHftGQtlm9YvyDRERHPSJT1Zr6Odm7A6e5zywHg2KKISg/+iIbO+CKgw2jAzS477vpHcYb0CogC295Kg==}
+  eslint-plugin-svelte@3.3.0:
+    resolution: {integrity: sha512-pgGY5mT/ftZjG6xO4HltcQvne3rWUjStVDlvEZCR5cQKmZADbQp9kDmUc+fhIo1oO2HlXP25A+g4pkaoiBCxqg==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
     peerDependencies:
       eslint: ^8.57.1 || ^9.0.0
@@ -3733,7 +3733,7 @@ snapshots:
     dependencies:
       eslint: 9.22.0(jiti@2.4.2)
 
-  eslint-plugin-svelte@3.2.1(eslint@9.22.0(jiti@2.4.2))(svelte@5.23.1)(ts-node@10.9.2(@types/node@22.13.10)(typescript@5.8.2)):
+  eslint-plugin-svelte@3.3.0(eslint@9.22.0(jiti@2.4.2))(svelte@5.23.1)(ts-node@10.9.2(@types/node@22.13.10)(typescript@5.8.2)):
     dependencies:
       '@eslint-community/eslint-utils': 4.5.1(eslint@9.22.0(jiti@2.4.2))
       '@jridgewell/sourcemap-codec': 1.5.0
