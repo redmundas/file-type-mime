@@ -20,7 +20,7 @@
     "format": "prettier --list-different --ignore-unknown --write ."
   },
   "devDependencies": {
-    "@sveltejs/adapter-auto": "^5.0.0",
+    "@sveltejs/adapter-auto": "^6.0.0",
     "@sveltejs/kit": "^2.5.0",
     "@sveltejs/vite-plugin-svelte": "^5.0.0",
     "@tailwindcss/postcss": "^4.0.2",
