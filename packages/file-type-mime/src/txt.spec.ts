@@ -43,6 +43,7 @@ describe('parse', () => {
     { path: './data/sample.deb', text: false },
     { path: './data/sample.exe', text: false },
     { path: './data/sample.class', text: false },
+    { path: './data/sample.m4a', text: false },
   ];
 
   for (const { path, text } of files) {

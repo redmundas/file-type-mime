@@ -212,6 +212,13 @@ describe('parse', () => {
         mime: 'video/x-m4v',
       },
     },
+    {
+      path: './data/sample.m4a',
+      data: {
+        ext: 'm4a',
+        mime: 'audio/mp4',
+      },
+    },
   ];
 
   for (const { data, path } of files) {
