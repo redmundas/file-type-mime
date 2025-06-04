@@ -18,6 +18,9 @@ export function parseFileTypeBoxFiles(buffer: ArrayBuffer): Result | undefined {
   if (is('M4V')) {
     return { ext: 'm4v', mime: 'video/x-m4v' };
   }
+  if (is('M4A')) {
+    return { ext: 'm4a', mime: 'audio/mp4' };
+  }
   // if (is('M4P')) {
   //   return { ext: 'm4p', mime: 'video/mp4' };
   // }
