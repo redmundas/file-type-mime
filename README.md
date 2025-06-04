@@ -122,6 +122,7 @@ Type: `{ ext: string; mime: string } | undefined`
 | mov            | video/quicktime                                                           |
 | afiv           | image/avif                                                                |
 | m4v            | video/x-m4v                                                               |
+| m4a            | audio/mp4                                                                 |
 
 ## License
 
