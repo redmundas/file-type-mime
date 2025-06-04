@@ -1,5 +1,11 @@
 # file-type-mime
 
+## 0.4.7
+
+### Patch Changes
+
+- a61f29c: Add support for m4a video file
+
 ## 0.4.6
 
 ### Patch Changes
