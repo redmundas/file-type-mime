@@ -22,7 +22,7 @@ export function bytesToHex(array: Uint8Array, separator = ' ') {
   return parts.join(separator);
 }
 
-export function stringToBytes(value: string, separator = ' ') {
+export function stringToBytes(value: string) {
   return encoder.encode(value);
 }
 
