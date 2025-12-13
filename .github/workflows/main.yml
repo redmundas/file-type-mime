@@ -69,7 +69,7 @@ jobs:
         run: pnpm build
 
       - name: Upload assets
-        uses: actions/upload-artifact@v5
+        uses: actions/upload-artifact@v6
         with:
           name: assets
           path: dist
