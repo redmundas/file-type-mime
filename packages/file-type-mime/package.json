@@ -21,7 +21,7 @@
   "scripts": {
     "check": "biome check src",
     "format": "biome format src --write",
-    "build": "tsup",
+    "build": "tsdown",
     "test": "vitest run",
     "execute": "node node-test.js",
     "coverage": "vitest run --coverage",
@@ -59,11 +59,11 @@
   "license": "MIT",
   "devDependencies": {
     "@biomejs/biome": "^2.0.0",
-    "@types/node": "^24.0.0",
+    "@types/node": "^25.9.1",
     "@vitest/coverage-v8": "^4.0.0",
     "ts-node": "^10.9.2",
-    "tsup": "^8.1.0",
-    "typescript": "^5.3.3",
+    "tsdown": "^0.22.0",
+    "typescript": "^6.0.3",
     "vitest": "^4.0.0"
   },
   "nyc": {
