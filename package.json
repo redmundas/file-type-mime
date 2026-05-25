@@ -17,5 +17,6 @@
   },
   "devDependencies": {
     "@changesets/cli": "^2.27.6"
-  }
+  },
+  "packageManager": "pnpm@11.3.0"
 }
