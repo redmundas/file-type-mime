@@ -68,7 +68,7 @@ importers:
         version: 8.62.0(eslint@10.5.0(jiti@2.7.0))(typescript@6.0.3)
       autoprefixer:
         specifier: ^10.4.17
-        version: 10.5.2(postcss@8.5.15)
+        version: 10.5.2(postcss@8.5.26)
       eslint:
         specifier: ^10.0.0
         version: 10.5.0(jiti@2.7.0)
@@ -80,7 +80,7 @@ importers:
         version: 3.19.0(eslint@10.5.0(jiti@2.7.0))(svelte@5.56.4(@typescript-eslint/types@8.62.0))(ts-node@10.9.2(@types/node@25.9.4)(typescript@6.0.3))
       postcss:
         specifier: ^8.4.35
-        version: 8.5.15
+        version: 8.5.26
       prettier:
         specifier: ^3.2.5
         version: 3.8.4
@@ -1556,6 +1556,11 @@ packages:
     engines: {node: ^10 || ^12 || ^13.7 || ^14 || >=15.0.1}
     hasBin: true
 
+  nanoid@3.3.18:
+    resolution: {integrity: sha512-DTg4MJbGMWkfi6VZFdNt2/caMbQy4Ou+Op/hJQvGEWcnVfoA1QA+xzRKAzw9jD6+GVOOeYr/mIcuDSdug6F6+w==}
+    engines: {node: ^10 || ^12 || ^13.7 || ^14 || >=15.0.1}
+    hasBin: true
+
   natural-compare@1.4.0:
     resolution: {integrity: sha512-OWND8ei3VtNC9h7V60qff3SVobHr996CTwgxubgyQYEpg290h9J0buyECNNJexkFm5sOajh5G116RYA1c8ZMSw==}
 
@@ -1677,12 +1682,12 @@ packages:
   postcss-value-parser@4.2.0:
     resolution: {integrity: sha512-1NNCs6uurfkVbeXG4S8JFT9t19m45ICnif8zWLd5oPSZ50QnwMfK+H3jv408d4jw/7Bttv5axS5IiHoLaVNHeQ==}
 
-  postcss@8.5.15:
-    resolution: {integrity: sha512-FfR8sjd4em2T6fb3I2MwAJU7HWVMr9zba+enmQeeWFfCbm+UOC/0X4DS8XtpUTMwWMGbjKYP7xjfNekzyGmB3A==}
-    engines: {node: ^10 || ^12 || >=14}
-
   postcss@8.5.16:
     resolution: {integrity: sha512-vuwillviilfKZsg0VGj5R/YwwcHx4SLsIOI/7K6mQkWx+l5cUHTjj5g0AasTBcyXsbfTgrwsUNmVUb5xVwyPwg==}
+    engines: {node: ^10 || ^12 || >=14}
+
+  postcss@8.5.26:
+    resolution: {integrity: sha512-u82N74LFzG8ca+dD8puPnplTXoGH4fTPpVGuIbt36G3qvNlkvfD0lEAZSxaly3KX8TS/L1A1gsCEmvKmBcVbkQ==}
     engines: {node: ^10 || ^12 || >=14}
 
   prelude-ls@1.2.1:
@@ -2714,7 +2719,7 @@ snapshots:
       '@alloc/quick-lru': 5.2.0
       '@tailwindcss/node': 4.3.2
       '@tailwindcss/oxide': 4.3.2
-      postcss: 8.5.16
+      postcss: 8.5.26
       tailwindcss: 4.3.2
 
   '@tailwindcss/vite@4.3.2(vite@8.1.3(@types/node@25.9.4)(jiti@2.7.0))':
@@ -2971,13 +2976,13 @@ snapshots:
       estree-walker: 3.0.3
       js-tokens: 10.0.0
 
-  autoprefixer@10.5.2(postcss@8.5.15):
+  autoprefixer@10.5.2(postcss@8.5.26):
     dependencies:
       browserslist: 4.28.4
       caniuse-lite: 1.0.30001799
       fraction.js: 5.3.4
       picocolors: 1.1.1
-      postcss: 8.5.15
+      postcss: 8.5.26
       postcss-value-parser: 4.2.0
 
   axobject-query@4.1.0: {}
@@ -3094,9 +3099,9 @@ snapshots:
       esutils: 2.0.3
       globals: 16.5.0
       known-css-properties: 0.37.0
-      postcss: 8.5.15
-      postcss-load-config: 3.1.4(postcss@8.5.15)(ts-node@10.9.2(@types/node@25.9.4)(typescript@6.0.3))
-      postcss-safe-parser: 7.0.1(postcss@8.5.15)
+      postcss: 8.5.26
+      postcss-load-config: 3.1.4(postcss@8.5.26)(ts-node@10.9.2(@types/node@25.9.4)(typescript@6.0.3))
+      postcss-safe-parser: 7.0.1(postcss@8.5.26)
       semver: 7.8.2
       svelte-eslint-parser: 1.8.0(svelte@5.56.4(@typescript-eslint/types@8.62.0))
     optionalDependencies:
@@ -3481,6 +3486,8 @@ snapshots:
 
   nanoid@3.3.12: {}
 
+  nanoid@3.3.18: {}
+
   natural-compare@1.4.0: {}
 
   node-releases@2.0.50: {}
@@ -3548,21 +3555,21 @@ snapshots:
 
   pify@4.0.1: {}
 
-  postcss-load-config@3.1.4(postcss@8.5.15)(ts-node@10.9.2(@types/node@25.9.4)(typescript@6.0.3)):
+  postcss-load-config@3.1.4(postcss@8.5.26)(ts-node@10.9.2(@types/node@25.9.4)(typescript@6.0.3)):
     dependencies:
       lilconfig: 2.1.0
       yaml: 1.10.3
     optionalDependencies:
-      postcss: 8.5.15
+      postcss: 8.5.26
       ts-node: 10.9.2(@types/node@25.9.4)(typescript@6.0.3)
 
-  postcss-safe-parser@7.0.1(postcss@8.5.15):
+  postcss-safe-parser@7.0.1(postcss@8.5.26):
     dependencies:
-      postcss: 8.5.15
+      postcss: 8.5.26
 
-  postcss-scss@4.0.9(postcss@8.5.16):
+  postcss-scss@4.0.9(postcss@8.5.26):
     dependencies:
-      postcss: 8.5.16
+      postcss: 8.5.26
 
   postcss-selector-parser@7.1.1:
     dependencies:
@@ -3571,15 +3578,15 @@ snapshots:
 
   postcss-value-parser@4.2.0: {}
 
-  postcss@8.5.15:
+  postcss@8.5.16:
     dependencies:
       nanoid: 3.3.12
       picocolors: 1.1.1
       source-map-js: 1.2.1
 
-  postcss@8.5.16:
+  postcss@8.5.26:
     dependencies:
-      nanoid: 3.3.12
+      nanoid: 3.3.18
       picocolors: 1.1.1
       source-map-js: 1.2.1
 
@@ -3754,8 +3761,8 @@ snapshots:
       eslint-scope: 8.4.0
       eslint-visitor-keys: 4.2.1
       espree: 10.4.0
-      postcss: 8.5.16
-      postcss-scss: 4.0.9(postcss@8.5.16)
+      postcss: 8.5.26
+      postcss-scss: 4.0.9(postcss@8.5.26)
       postcss-selector-parser: 7.1.1
       semver: 7.8.2
     optionalDependencies:
