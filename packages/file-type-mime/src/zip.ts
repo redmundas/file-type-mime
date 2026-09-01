@@ -1,5 +1,5 @@
-import { getString, getUint16, getUint32 } from './bytes';
-import type { Result } from './types';
+import { getString, getUint16, getUint32 } from "./bytes";
+import type { Result } from "./types";
 
 // https://en.wikipedia.org/wiki/ZIP_(file_format)#File_headers
 
@@ -13,45 +13,45 @@ export function parseZipLikeFiles(
     const size = getUint16(buffer, offset + 26);
     const skip = getUint16(buffer, offset + 28);
     const name = getString(buffer, offset + 30, size);
-    const [identifier] = name.split('/');
-    const xmlFormat = name.endsWith('.xml');
+    const [identifier] = name.split("/");
+    const xmlFormat = name.endsWith(".xml");
 
-    if (identifier === 'extension.vsixmanifest') {
+    if (identifier === "extension.vsixmanifest") {
       return {
-        ext: 'vsix',
-        mime: 'application/vsix',
+        ext: "vsix",
+        mime: "application/vsix",
       };
     }
 
-    if (identifier === 'META-INF') {
+    if (identifier === "META-INF") {
       return {
-        ext: 'jar',
-        mime: 'application/java-archive',
+        ext: "jar",
+        mime: "application/java-archive",
       };
     }
 
-    if (identifier === 'ppt' && xmlFormat) {
+    if (identifier === "ppt" && xmlFormat) {
       return {
-        ext: 'pptx',
-        mime: 'application/vnd.openxmlformats-officedocument.presentationml.presentation',
+        ext: "pptx",
+        mime: "application/vnd.openxmlformats-officedocument.presentationml.presentation",
       };
     }
 
-    if (identifier === 'word' && xmlFormat) {
+    if (identifier === "word" && xmlFormat) {
       return {
-        ext: 'docx',
-        mime: 'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
+        ext: "docx",
+        mime: "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
       };
     }
 
-    if (identifier === 'xl' && xmlFormat) {
+    if (identifier === "xl" && xmlFormat) {
       return {
-        ext: 'xlsx',
-        mime: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
+        ext: "xlsx",
+        mime: "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
       };
     }
 
-    if (identifier === 'mimetype') {
+    if (identifier === "mimetype") {
       return parseOpenDocumentFile(buffer, size) ?? result;
     }
 
@@ -76,30 +76,30 @@ function parseOpenDocumentFile(
       compressedSize,
     );
 
-    if (mime === 'application/vnd.oasis.opendocument.presentation') {
+    if (mime === "application/vnd.oasis.opendocument.presentation") {
       return {
-        ext: 'odp',
+        ext: "odp",
         mime,
       };
     }
 
-    if (mime === 'application/vnd.oasis.opendocument.spreadsheet') {
+    if (mime === "application/vnd.oasis.opendocument.spreadsheet") {
       return {
-        ext: 'ods',
+        ext: "ods",
         mime,
       };
     }
 
-    if (mime === 'application/vnd.oasis.opendocument.text') {
+    if (mime === "application/vnd.oasis.opendocument.text") {
       return {
-        ext: 'odt',
+        ext: "odt",
         mime,
       };
     }
 
-    if (mime === 'application/epub+zip') {
+    if (mime === "application/epub+zip") {
       return {
-        ext: 'epub',
+        ext: "epub",
         mime,
       };
     }

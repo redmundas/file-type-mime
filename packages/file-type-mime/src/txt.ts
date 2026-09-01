@@ -1,4 +1,4 @@
-import { getString } from './bytes';
+import { getString } from "./bytes";
 
 export function isText(data: string) {
   for (let i = 0; i < data.length; i++) {
@@ -25,9 +25,9 @@ export function parseTxtLikeFiles(buffer: ArrayBuffer) {
     }
     try {
       JSON.parse(data);
-      return { ext: 'json', mime: 'application/json' };
+      return { ext: "json", mime: "application/json" };
     } catch {
-      return { ext: 'txt', mime: 'text/plain' };
+      return { ext: "txt", mime: "text/plain" };
     }
   } catch {
     return undefined;

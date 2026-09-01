@@ -1,10 +1,10 @@
-import { compareBytes, containsString } from './bytes';
-import { parseFileTypeBoxFiles } from './ftyp';
-import { type Signature, signatures as samples } from './signatures';
-import { parseTxtLikeFiles } from './txt';
-import type { Options, Result } from './types';
-import { findMatches, getUpperLimit } from './utils';
-import { parseZipLikeFiles } from './zip';
+import { compareBytes, containsString } from "./bytes";
+import { parseFileTypeBoxFiles } from "./ftyp";
+import { type Signature, signatures as samples } from "./signatures";
+import { parseTxtLikeFiles } from "./txt";
+import type { Options, Result } from "./types";
+import { findMatches, getUpperLimit } from "./utils";
+import { parseZipLikeFiles } from "./zip";
 
 // Upper limit needs to be not less than the longest sample + offset
 const UPPER_LIMIT = getUpperLimit(samples);
@@ -25,7 +25,7 @@ export default function parse(
     }
   }
 
-  if (containsString(buffer, 'ftyp', 4)) {
+  if (containsString(buffer, "ftyp", 4)) {
     return parseFileTypeBoxFiles(buffer);
   }
 
@@ -55,7 +55,7 @@ function parseBytes(
     subSignatures = [],
   ] of signatures) {
     if (compareBytes(bytes, sample, offset)) {
-      if (ext === 'zip' && !exact) {
+      if (ext === "zip" && !exact) {
         // pass full buffer to zip parser
         return parseZipLikeFiles(buffer, { ext, mime });
       }

@@ -7,6 +7,10 @@
     "name": "Edmundas Ramanauskas",
     "email": "edmundas.ramanauskas@gmail.com"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/redmundas/file-type-mime.git"
+  },
   "scripts": {
     "fmt": "oxfmt",
     "fmt:check": "oxfmt --check",
@@ -14,10 +18,6 @@
     "lint:fix": "oxlint --fix",
     "version": "changeset version",
     "publish": "changeset publish"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/redmundas/file-type-mime.git"
   },
   "devDependencies": {
     "@changesets/cli": "^2.27.6",

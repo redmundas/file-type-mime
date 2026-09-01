@@ -2,9 +2,44 @@
   "name": "file-type-mime",
   "version": "0.4.7",
   "description": "Utility to parse mime type from a file content",
+  "keywords": [
+    "application",
+    "audio",
+    "bytes",
+    "content",
+    "content-type",
+    "file",
+    "font",
+    "ftyp",
+    "image",
+    "json",
+    "mime",
+    "mime-type",
+    "parse",
+    "pdf",
+    "text",
+    "type",
+    "video",
+    "zip"
+  ],
   "homepage": "https://file-type-mime.vercel.app",
-  "sideEffects": false,
+  "license": "MIT",
+  "author": {
+    "name": "Edmundas Ramanauskas",
+    "email": "edmundas.ramanauskas@gmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/redmundas/file-type-mime.git"
+  },
+  "files": [
+    "dist"
+  ],
   "type": "module",
+  "sideEffects": false,
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
@@ -12,12 +47,6 @@
       "require": "./dist/index.cjs"
     }
   },
-  "main": "./dist/index.cjs",
-  "module": "./dist/index.js",
-  "types": "./dist/index.d.ts",
-  "files": [
-    "dist"
-  ],
   "scripts": {
     "check": "biome check src",
     "format": "biome format src --write",
@@ -28,35 +57,6 @@
     "release": "pnpm build && pnpm publish",
     "validate": "pnpm build && pnpm execute"
   },
-  "keywords": [
-    "mime",
-    "file",
-    "type",
-    "content",
-    "content-type",
-    "mime-type",
-    "parse",
-    "bytes",
-    "json",
-    "text",
-    "image",
-    "font",
-    "audio",
-    "video",
-    "pdf",
-    "application",
-    "zip",
-    "ftyp"
-  ],
-  "author": {
-    "name": "Edmundas Ramanauskas",
-    "email": "edmundas.ramanauskas@gmail.com"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/redmundas/file-type-mime.git"
-  },
-  "license": "MIT",
   "devDependencies": {
     "@types/node": "^25.9.1",
     "@vitest/coverage-v8": "^4.0.0",
@@ -66,9 +66,7 @@
     "vitest": "^4.0.0"
   },
   "nyc": {
-    "extension": [
-      ".ts"
-    ],
+    "all": true,
     "exclude": [
       "**/*.d.ts",
       "**/*.spec.ts",
@@ -76,6 +74,8 @@
       "data",
       "dist"
     ],
-    "all": true
+    "extension": [
+      ".ts"
+    ]
   }
 }
