@@ -48,8 +48,7 @@
     }
   },
   "scripts": {
-    "check": "biome check src",
-    "format": "biome format src --write",
+    "check": "tsc --noEmit",
     "build": "tsdown",
     "test": "vitest run",
     "execute": "node node-test.js",
