@@ -17,6 +17,14 @@
       }
     ]
   },
+  "overrides": [
+    {
+      "files": ["*.spec.ts"],
+      "rules": {
+        "eslint/no-unused-expressions": "off"
+      }
+    }
+  ],
   "env": {
     "builtin": true
   }
