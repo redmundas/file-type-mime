@@ -1,4 +1,4 @@
-import type { BaseSignature, Signature } from './signatures';
+import type { BaseSignature, Signature } from "./signatures";
 
 export function getUpperLimit(signatures: Signature[]) {
   return flatten(signatures)

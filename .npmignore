@@ -5,6 +5,8 @@ src
 .editorconfig
 .gitignore
 .prettierrc
+.oxfmtrc.json
+.oxlintrc.json
 biome.json
 node-test.js
 pnpm-lock.yaml

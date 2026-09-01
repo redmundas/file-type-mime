@@ -7,16 +7,22 @@
     "name": "Edmundas Ramanauskas",
     "email": "edmundas.ramanauskas@gmail.com"
   },
-  "scripts": {
-    "version": "changeset version",
-    "publish": "changeset publish"
-  },
   "repository": {
     "type": "git",
     "url": "https://github.com/redmundas/file-type-mime.git"
   },
+  "scripts": {
+    "fmt": "oxfmt",
+    "fmt:check": "oxfmt --check",
+    "lint": "oxlint",
+    "lint:fix": "oxlint --fix",
+    "version": "changeset version",
+    "publish": "changeset publish"
+  },
   "devDependencies": {
-    "@changesets/cli": "^2.27.6"
+    "@changesets/cli": "^2.27.6",
+    "oxfmt": "^0.65.0",
+    "oxlint": "^1.80.0"
   },
   "packageManager": "pnpm@12.2.1+sha512.f55ca68aacb9eb5ab69c66f828a98af89a32286703aef1f8da131ca7eab4d677f34bfa85e186467a919c0799df8b6f4aa240f7dc2919b33b3273190104162616"
 }

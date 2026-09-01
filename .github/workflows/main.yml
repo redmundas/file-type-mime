@@ -1,7 +1,7 @@
 name: build
 on:
   push:
-    branches: [ main ]
+    branches: [main]
   pull_request:
   workflow_dispatch:
 
@@ -42,17 +42,19 @@ jobs:
         working-directory: packages/file-type-mime
         run: pnpm install --prefer-offline --frozen-lockfile
 
+      - name: Format code
+        run: pnpm run fmt
+
+      - name: Lint code
+        run: pnpm run lint
+
       - name: Validate code
         working-directory: packages/file-type-mime
-        run: pnpm check
-
-      - name: Format code
-        working-directory: packages/file-type-mime
-        run: pnpm format
+        run: pnpm run check
 
       - name: Test code
         working-directory: packages/file-type-mime
-        run: pnpm test
+        run: pnpm run test
 
       - name: Ensure clean repo
         run: |
@@ -65,7 +67,7 @@ jobs:
 
       - name: Build code
         working-directory: packages/file-type-mime
-        run: pnpm build
+        run: pnpm run build
 
       - name: Upload assets
         uses: actions/upload-artifact@v7

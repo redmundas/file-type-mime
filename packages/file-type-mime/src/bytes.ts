@@ -17,8 +17,8 @@ export function getString(
   return decoder.decode(new Uint8Array(slice));
 }
 
-export function bytesToHex(array: Uint8Array, separator = ' ') {
-  const parts = [...array].map((x) => x.toString(16).padStart(2, '0'));
+export function bytesToHex(array: Uint8Array, separator = " ") {
+  const parts = [...array].map((x) => x.toString(16).padStart(2, "0"));
   return parts.join(separator);
 }
 
@@ -62,5 +62,5 @@ function getBufferView(buffer: ArrayBuffer, offset: number, length: number) {
   return new DataView(new Uint8Array(slice).buffer);
 }
 
-const decoder = new TextDecoder('utf8');
+const decoder = new TextDecoder("utf8");
 const encoder = new TextEncoder();
