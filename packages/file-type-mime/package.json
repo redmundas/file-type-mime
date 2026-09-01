@@ -58,7 +58,6 @@
   },
   "license": "MIT",
   "devDependencies": {
-    "@biomejs/biome": "^2.0.0",
     "@types/node": "^25.9.1",
     "@vitest/coverage-v8": "^4.0.0",
     "ts-node": "^10.9.2",
