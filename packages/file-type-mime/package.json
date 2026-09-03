@@ -61,7 +61,7 @@
     "@vitest/coverage-v8": "^4.0.0",
     "ts-node": "^10.9.2",
     "tsdown": "^0.22.0",
-    "typescript": "^6.0.3",
+    "typescript": "^7.0.0",
     "vitest": "^4.0.0"
   },
   "nyc": {
