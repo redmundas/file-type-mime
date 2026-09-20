@@ -226,6 +226,13 @@ describe("parse", () => {
         mime: "application/zstd",
       },
     },
+    {
+      path: "./data/sample.xz",
+      data: {
+        ext: "xz",
+        mime: "application/x-xz",
+      },
+    },
   ];
 
   for (const { data, path } of files) {
