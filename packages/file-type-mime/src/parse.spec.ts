@@ -268,6 +268,13 @@ describe("parse", () => {
         mime: "application/xml",
       },
     },
+    {
+      path: "./data/sample.nes",
+      data: {
+        ext: "nes",
+        mime: "application/x-nintendo-nes-rom",
+      },
+    },
   ];
 
   for (const { data, path } of files) {

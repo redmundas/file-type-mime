@@ -130,6 +130,7 @@ Type: `{ ext: string; mime: string } | undefined`
 | ac3            | audio/vnd.dolby.dd-raw                                                    |
 | lz             | application/lzip                                                          |
 | xml            | application/xml                                                           |
+| nes            | application/x-nintendo-nes-rom                                            |
 
 ## License
 

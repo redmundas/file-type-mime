@@ -141,4 +141,5 @@ export const signatures: Signature[] = [
   ["ac3", "audio/vnd.dolby.dd-raw", [0x0b, 0x77]],
   ["lz", "application/lzip", [0x4c, 0x5a, 0x49, 0x50]],
   ["xml", "application/xml", [0x3c, 0x3f, 0x78, 0x6d, 0x6c]],
+  ["nes", "application/x-nintendo-nes-rom", [0x4e, 0x45, 0x53, 0x1a]],
 ];
