@@ -127,6 +127,7 @@ Type: `{ ext: string; mime: string } | undefined`
 | xz             | application/x-xz                                                          |
 | dmg            | application/x-apple-diskimage                                             |
 | Z              | application/x-compress                                                    |
+| ac3            | audio/vnd.dolby.dd-raw                                                    |
 | xml            | application/xml                                                           |
 
 ## License

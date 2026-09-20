@@ -248,6 +248,13 @@ describe("parse", () => {
       },
     },
     {
+      path: "./data/sample.ac3",
+      data: {
+        ext: "ac3",
+        mime: "audio/vnd.dolby.dd-raw",
+      },
+    },
+    {
       path: "./data/sample.xml",
       data: {
         ext: "xml",

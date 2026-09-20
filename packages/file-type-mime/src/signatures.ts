@@ -138,4 +138,5 @@ export const signatures: Signature[] = [
   ["dmg", "application/x-apple-diskimage", [0x78, 0x01]],
   ["Z", "application/x-compress", [0x1f, 0xa0]],
   ["Z", "application/x-compress", [0x1f, 0x9d]],
+  ["ac3", "audio/vnd.dolby.dd-raw", [0x0b, 0x77]],
 ];
