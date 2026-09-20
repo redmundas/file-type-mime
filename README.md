@@ -126,6 +126,7 @@ Type: `{ ext: string; mime: string } | undefined`
 | zst            | application/zstd                                                          |
 | xz             | application/x-xz                                                          |
 | dmg            | application/x-apple-diskimage                                             |
+| Z              | application/x-compress                                                    |
 | xml            | application/xml                                                           |
 
 ## License

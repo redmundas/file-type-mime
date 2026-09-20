@@ -136,4 +136,6 @@ export const signatures: Signature[] = [
   ["zst", "application/zstd", [0x28, 0xb5, 0x2f, 0xfd]],
   ["xz", "application/x-xz", [0xfd, 0x37, 0x7a, 0x58, 0x5a, 0x00]],
   ["dmg", "application/x-apple-diskimage", [0x78, 0x01]],
+  ["Z", "application/x-compress", [0x1f, 0xa0]],
+  ["Z", "application/x-compress", [0x1f, 0x9d]],
 ];

@@ -241,6 +241,13 @@ describe("parse", () => {
       },
     },
     {
+      path: "./data/sample.Z",
+      data: {
+        ext: "Z",
+        mime: "application/x-compress",
+      },
+    },
+    {
       path: "./data/sample.xml",
       data: {
         ext: "xml",
