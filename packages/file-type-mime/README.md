@@ -124,6 +124,7 @@ Type: `{ ext: string; mime: string } | undefined`
 | m4v            | video/x-m4v                                                               |
 | m4a            | audio/mp4                                                                 |
 | zst            | application/zstd                                                          |
+| xz             | application/x-xz                                                          |
 
 ## License
 
