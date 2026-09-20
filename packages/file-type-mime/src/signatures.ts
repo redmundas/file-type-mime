@@ -133,4 +133,5 @@ export const signatures: Signature[] = [
   ["mov", "video/quicktime", [0x6d, 0x64, 0x61, 0x74], { offset: 4 }],
   ["mov", "video/quicktime", [0x6d, 0x6f, 0x6f, 0x76], { offset: 4 }],
   ["mov", "video/quicktime", [0x77, 0x69, 0x64, 0x65], { offset: 4 }],
+  ["zst", "application/zstd", [0x28, 0xb5, 0x2f, 0xfd]],
 ];
