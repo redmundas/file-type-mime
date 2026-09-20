@@ -135,4 +135,5 @@ export const signatures: Signature[] = [
   ["mov", "video/quicktime", [0x77, 0x69, 0x64, 0x65], { offset: 4 }],
   ["zst", "application/zstd", [0x28, 0xb5, 0x2f, 0xfd]],
   ["xz", "application/x-xz", [0xfd, 0x37, 0x7a, 0x58, 0x5a, 0x00]],
+  ["dmg", "application/x-apple-diskimage", [0x78, 0x01]],
 ];

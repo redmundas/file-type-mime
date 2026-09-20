@@ -233,6 +233,20 @@ describe("parse", () => {
         mime: "application/x-xz",
       },
     },
+    {
+      path: "./data/sample.dmg",
+      data: {
+        ext: "dmg",
+        mime: "application/x-apple-diskimage",
+      },
+    },
+    {
+      path: "./data/sample.xml",
+      data: {
+        ext: "xml",
+        mime: "application/xml",
+      },
+    },
   ];
 
   for (const { data, path } of files) {
