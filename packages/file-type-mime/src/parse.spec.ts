@@ -219,6 +219,13 @@ describe("parse", () => {
         mime: "audio/mp4",
       },
     },
+    {
+      path: "./data/sample.zst",
+      data: {
+        ext: "zst",
+        mime: "application/zstd",
+      },
+    },
   ];
 
   for (const { data, path } of files) {

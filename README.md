@@ -123,6 +123,7 @@ Type: `{ ext: string; mime: string } | undefined`
 | afiv           | image/avif                                                                |
 | m4v            | video/x-m4v                                                               |
 | m4a            | audio/mp4                                                                 |
+| zst            | application/zstd                                                          |
 
 ## License
 
