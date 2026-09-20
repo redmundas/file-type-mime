@@ -10,8 +10,8 @@ describe("utils", () => {
 
   test("flatten", () => {
     const flattened = flatten(signatures);
-    expect(signatures).to.be.lengthOf(51);
-    expect(flattened).to.be.lengthOf(55);
+    expect(signatures).to.be.lengthOf(52);
+    expect(flattened).to.be.lengthOf(56);
   });
 
   test("findMatches", () => {

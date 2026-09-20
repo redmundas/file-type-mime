@@ -255,6 +255,13 @@ describe("parse", () => {
       },
     },
     {
+      path: "./data/sample.lz",
+      data: {
+        ext: "lz",
+        mime: "application/lzip",
+      },
+    },
+    {
       path: "./data/sample.xml",
       data: {
         ext: "xml",

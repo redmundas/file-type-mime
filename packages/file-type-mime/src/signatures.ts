@@ -139,4 +139,5 @@ export const signatures: Signature[] = [
   ["Z", "application/x-compress", [0x1f, 0xa0]],
   ["Z", "application/x-compress", [0x1f, 0x9d]],
   ["ac3", "audio/vnd.dolby.dd-raw", [0x0b, 0x77]],
+  ["lz", "application/lzip", [0x4c, 0x5a, 0x49, 0x50]],
 ];
