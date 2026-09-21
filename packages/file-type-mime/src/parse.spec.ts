@@ -233,6 +233,48 @@ describe("parse", () => {
         mime: "application/x-xz",
       },
     },
+    {
+      path: "./data/sample.dmg",
+      data: {
+        ext: "dmg",
+        mime: "application/x-apple-diskimage",
+      },
+    },
+    {
+      path: "./data/sample.Z",
+      data: {
+        ext: "Z",
+        mime: "application/x-compress",
+      },
+    },
+    {
+      path: "./data/sample.ac3",
+      data: {
+        ext: "ac3",
+        mime: "audio/vnd.dolby.dd-raw",
+      },
+    },
+    {
+      path: "./data/sample.lz",
+      data: {
+        ext: "lz",
+        mime: "application/lzip",
+      },
+    },
+    {
+      path: "./data/sample.xml",
+      data: {
+        ext: "xml",
+        mime: "application/xml",
+      },
+    },
+    {
+      path: "./data/sample.nes",
+      data: {
+        ext: "nes",
+        mime: "application/x-nintendo-nes-rom",
+      },
+    },
   ];
 
   for (const { data, path } of files) {
