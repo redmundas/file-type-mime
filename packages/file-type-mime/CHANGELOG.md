@@ -1,5 +1,18 @@
 # file-type-mime
 
+## 0.4.8
+
+### Patch Changes
+
+- 629a071: Add support for lz file format
+- 629a071: Add support for Z file format
+- 629a071: Add support for xml file format
+- 3ed1097: Add support for xz file format
+- 30a1937: Add support for zst file format
+- 629a071: Add support for ac3 file format
+- 629a071: Add support for dmg file format
+- 629a071: Add support for nes file format
+
 ## 0.4.7
 
 ### Patch Changes
