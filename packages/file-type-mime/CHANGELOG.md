@@ -1,5 +1,11 @@
 # file-type-mime
 
+## 0.4.9
+
+### Patch Changes
+
+- 3e4b29e: Fix package exports config
+
 ## 0.4.8
 
 ### Patch Changes
