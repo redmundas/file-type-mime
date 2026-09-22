@@ -201,7 +201,7 @@ importers:
     dependencies:
       file-type-mime:
         specifier: ^0.4.7
-        version: 0.4.7
+        version: 0.4.8
       react:
         specifier: ^19.2.8
         version: 19.3.0
@@ -1274,8 +1274,8 @@ packages:
       picomatch:
         optional: true
 
-  file-type-mime@0.4.7:
-    resolution: {integrity: sha512-qrewzVfFZo8Z9jbrEQMeUeBuqhoWxp5pWOJ6X3U4MrNVu3fKVe9y55U8uMstBFN/9PLYxvf+nW4bqGBul5FNBg==}
+  file-type-mime@0.4.8:
+    resolution: {integrity: sha512-IAfbl4k0NTkmK9wUmtRNbsEAa5C1lAefTHVxtfirErqKaqrDmTU0JAffd4fByXwHnLZHCqRCfizZfSxhrw+CKQ==}
 
   fsevents@2.3.3:
     resolution: {integrity: sha512-5xoDfX+fL7faATnagmWPpbFtwh/R77WmMMqqHGS65C3vvB0YHrgF+B1YmZ3441tMj5n63k0212XNoJwzlhffQw==}
@@ -1959,7 +1959,7 @@ snapshots:
 
   '@jridgewell/gen-mapping@0.3.13':
     dependencies:
-      '@jridgewell/sourcemap-codec': 1.5.5
+      '@jridgewell/sourcemap-codec': 1.6.0
       '@jridgewell/trace-mapping': 0.3.31
 
   '@jridgewell/remapping@2.3.5':
@@ -1976,7 +1976,7 @@ snapshots:
   '@jridgewell/trace-mapping@0.3.31':
     dependencies:
       '@jridgewell/resolve-uri': 3.1.2
-      '@jridgewell/sourcemap-codec': 1.5.5
+      '@jridgewell/sourcemap-codec': 1.6.0
 
   '@jridgewell/trace-mapping@0.3.9':
     dependencies:
@@ -2526,7 +2526,7 @@ snapshots:
     optionalDependencies:
       picomatch: 4.0.4
 
-  file-type-mime@0.4.7: {}
+  file-type-mime@0.4.8: {}
 
   fsevents@2.3.3:
     optional: true
@@ -2666,7 +2666,7 @@ snapshots:
 
   magic-string@0.30.21:
     dependencies:
-      '@jridgewell/sourcemap-codec': 1.5.5
+      '@jridgewell/sourcemap-codec': 1.6.0
 
   magic-string@1.4.1:
     dependencies:
