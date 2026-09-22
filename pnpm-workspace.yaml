@@ -3,3 +3,5 @@ packages:
   - "websites/*"
 allowBuilds:
   esbuild: true
+overrides:
+  "@file-type-mime/file-type-mime": link:packages/file-type-mime
