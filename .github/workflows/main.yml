@@ -59,7 +59,7 @@ jobs:
       - name: Ensure clean repo
         run: |
           if [[ ! -z "$(git status --porcelain)" ]]; then
-            echo Working directory is dirty.
+            echo "Working directory is dirty"
             git status --porcelain
             git --no-pager diff --no-color
             exit 1
@@ -69,8 +69,12 @@ jobs:
         working-directory: packages/file-type-mime
         run: pnpm run build
 
+      - name: Validate build
+        working-directory: packages/file-type-mime
+        run: pnpm run validate
+
       - name: Upload assets
         uses: actions/upload-artifact@v7
         with:
           name: assets
-          path: dist
+          path: packages/file-type-mime/dist

@@ -16,7 +16,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "file-type-mime": "^0.4.7",
+    "file-type-mime": "0.4.7",
     "react": "^19.2.8",
     "react-dom": "^19.2.8"
   },

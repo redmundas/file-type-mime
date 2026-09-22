@@ -1,8 +1,8 @@
 import { readFileSync } from "node:fs";
 import { resolve } from "node:path";
-import { parse } from "./dist/index.js";
+import { parse } from "file-type-mime";
 
-const file = resolve("./data/sample.deb");
+const file = resolve("./data/sample.pdf");
 const buffer = readFileSync(file);
 const result = parse(buffer);
 

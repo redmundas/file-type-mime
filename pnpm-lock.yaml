@@ -162,6 +162,9 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
+overrides:
+  '@file-type-mime/file-type-mime': link:packages/file-type-mime
+
 importers:
 
   .:
@@ -177,6 +180,10 @@ importers:
         version: 1.83.0
 
   packages/file-type-mime:
+    dependencies:
+      file-type-mime:
+        specifier: 'link:'
+        version: 'link:'
     devDependencies:
       '@types/node':
         specifier: ^26.5.1
@@ -200,7 +207,7 @@ importers:
   websites/file-type-mime:
     dependencies:
       file-type-mime:
-        specifier: ^0.4.7
+        specifier: 0.4.7
         version: 0.4.7
       react:
         specifier: ^19.2.8
