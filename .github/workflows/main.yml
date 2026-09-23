@@ -42,19 +42,20 @@ jobs:
         working-directory: packages/file-type-mime
         run: pnpm install --prefer-offline --frozen-lockfile
 
+      - parallel:
+          - name: Validate code
+            working-directory: packages/file-type-mime
+            run: pnpm run check
+
+          - name: Test code
+            working-directory: packages/file-type-mime
+            run: pnpm run test
+
+          - name: Lint code
+            run: pnpm run lint
+
       - name: Format code
         run: pnpm run fmt
-
-      - name: Lint code
-        run: pnpm run lint
-
-      - name: Validate code
-        working-directory: packages/file-type-mime
-        run: pnpm run check
-
-      - name: Test code
-        working-directory: packages/file-type-mime
-        run: pnpm run test
 
       - name: Ensure clean repo
         run: |
