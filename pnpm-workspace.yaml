@@ -5,3 +5,6 @@ allowBuilds:
   esbuild: true
 overrides:
   "@file-type-mime/file-type-mime": link:packages/file-type-mime
+minimumReleaseAge: 1440
+minimumReleaseAgeExclude:
+- file-type-mime
