@@ -207,8 +207,8 @@ importers:
   websites/file-type-mime:
     dependencies:
       file-type-mime:
-        specifier: 0.4.7
-        version: 0.4.7
+        specifier: 0.4.9
+        version: 0.4.9
       react:
         specifier: ^19.2.8
         version: 19.3.0
@@ -1281,8 +1281,8 @@ packages:
       picomatch:
         optional: true
 
-  file-type-mime@0.4.7:
-    resolution: {integrity: sha512-qrewzVfFZo8Z9jbrEQMeUeBuqhoWxp5pWOJ6X3U4MrNVu3fKVe9y55U8uMstBFN/9PLYxvf+nW4bqGBul5FNBg==}
+  file-type-mime@0.4.9:
+    resolution: {integrity: sha512-H0oSRdmIEnGH8huapTB9cd+62UuYcaYEbQcwKACRweGmFqiITiA42COUTSpLs8vinWy1qfDai7Z3mqFy0g1cKw==}
 
   fsevents@2.3.3:
     resolution: {integrity: sha512-5xoDfX+fL7faATnagmWPpbFtwh/R77WmMMqqHGS65C3vvB0YHrgF+B1YmZ3441tMj5n63k0212XNoJwzlhffQw==}
@@ -2533,7 +2533,7 @@ snapshots:
     optionalDependencies:
       picomatch: 4.0.4
 
-  file-type-mime@0.4.7: {}
+  file-type-mime@0.4.9: {}
 
   fsevents@2.3.3:
     optional: true
