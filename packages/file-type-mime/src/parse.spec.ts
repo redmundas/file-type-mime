@@ -275,6 +275,36 @@ describe("parse", () => {
         mime: "application/x-nintendo-nes-rom",
       },
     },
+    { path: "./data/sample.otf", data: { ext: "otf", mime: "font/otf" } },
+    { path: "./data/sample.ttf", data: { ext: "ttf", mime: "font/ttf" } },
+    { path: "./data/sample.mid", data: { ext: "mid", mime: "audio/midi" } },
+    { path: "./data/sample.flv", data: { ext: "flv", mime: "video/x-flv" } },
+    {
+      path: "./data/sample.elf",
+      data: { ext: "elf", mime: "application/x-elf" },
+    },
+    {
+      path: "./data/sample.rpm",
+      data: { ext: "rpm", mime: "application/x-rpm" },
+    },
+    {
+      path: "./data/sample.lz4",
+      data: { ext: "lz4", mime: "application/x-lz4" },
+    },
+    { path: "./data/sample.jxl", data: { ext: "jxl", mime: "image/jxl" } },
+    { path: "./data/sample.qoi", data: { ext: "qoi", mime: "image/qoi" } },
+    {
+      path: "./data/sample.glb",
+      data: { ext: "glb", mime: "model/gltf-binary" },
+    },
+    {
+      path: "./data/sample.pcap",
+      data: { ext: "pcap", mime: "application/vnd.tcpdump.pcap" },
+    },
+    {
+      path: "./data/sample.pcapng",
+      data: { ext: "pcapng", mime: "application/vnd.tcpdump.pcap" },
+    },
   ];
 
   for (const { data, path } of files) {
@@ -286,6 +316,31 @@ describe("parse", () => {
       expect(result).to.eql(data);
     });
   }
+
+  test.each([
+    ["jxl codestream", [0xff, 0x0a, 0x00, 0x00], "jxl", "image/jxl"],
+    [
+      "pcap big-endian",
+      [0xa1, 0xb2, 0xc3, 0xd4],
+      "pcap",
+      "application/vnd.tcpdump.pcap",
+    ],
+    [
+      "pcap nanosecond little-endian",
+      [0x4d, 0x3c, 0xb2, 0xa1],
+      "pcap",
+      "application/vnd.tcpdump.pcap",
+    ],
+    [
+      "pcap nanosecond big-endian",
+      [0xa1, 0xb2, 0x3c, 0x4d],
+      "pcap",
+      "application/vnd.tcpdump.pcap",
+    ],
+  ])("parse alternative signature: %s", (_, bytes, ext, mime) => {
+    const buffer = new Uint8Array(bytes).buffer;
+    expect(parse(buffer)).to.eql({ ext, mime });
+  });
 
   test("parse with hint option", () => {
     const result = { ext: "pdf", mime: "application/pdf" };

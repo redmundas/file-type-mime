@@ -10,13 +10,17 @@ describe("utils", () => {
 
   test("flatten", () => {
     const flattened = flatten(signatures);
-    expect(signatures).to.be.lengthOf(54);
-    expect(flattened).to.be.lengthOf(58);
+    expect(signatures).to.be.lengthOf(70);
+    expect(flattened).to.be.lengthOf(74);
   });
 
   test("findMatches", () => {
     expect(findMatches(signatures, {})).to.be.lengthOf(0);
     expect(findMatches(signatures, { ext: "mp3" })).to.be.lengthOf(4);
     expect(findMatches(signatures, { mime: "video/ogg" })).to.be.lengthOf(2);
+    expect(findMatches(signatures, { ext: "pcap" })).to.be.lengthOf(4);
+    expect(
+      findMatches(signatures, { mime: "application/vnd.tcpdump.pcap" }),
+    ).to.be.lengthOf(5);
   });
 });
