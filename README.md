@@ -131,6 +131,18 @@ Type: `{ ext: string; mime: string } | undefined`
 | lz             | application/lzip                                                          |
 | xml            | application/xml                                                           |
 | nes            | application/x-nintendo-nes-rom                                            |
+| otf            | font/otf                                                                  |
+| ttf            | font/ttf                                                                  |
+| mid            | audio/midi                                                                |
+| flv            | video/x-flv                                                               |
+| elf            | application/x-elf                                                         |
+| rpm            | application/x-rpm                                                         |
+| lz4            | application/x-lz4                                                         |
+| jxl            | image/jxl                                                                 |
+| qoi            | image/qoi                                                                 |
+| glb            | model/gltf-binary                                                         |
+| pcap           | application/vnd.tcpdump.pcap                                              |
+| pcapng         | application/vnd.tcpdump.pcap                                              |
 
 ## License
 
